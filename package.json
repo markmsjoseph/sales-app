@@ -17,5 +17,8 @@
     "react-router-dom": "^4.2.2",
     "react-tabs": "^2.2.1",
     "simpl-schema": "^1.4.2"
+  },
+  "engines":{
+    "node":"v8.9.4"
   }
 }
