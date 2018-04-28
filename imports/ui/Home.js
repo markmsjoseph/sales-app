@@ -21,6 +21,7 @@ export default class Home extends React.Component {
           console.log("No user but trying to go back: In ComponentDidMount from Link.js");
           this.props.history.push('/');
         }
+        console.log(Meteor.userId());
         //if admin user, pass in prop to display admin page
     }
 
