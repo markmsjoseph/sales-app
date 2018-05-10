@@ -4,13 +4,6 @@ import {Images} from '../api/images';
 
 export default class AddPostForm extends React.Component {
 
-//   componentDidMount() {
-//           console.log("ComponentDidMount fires CHATCOMPONENT");
-//           this.postTracker =  Tracker.autorun(() => {
-//           Meteor.subscribe('getAllUsers');
-//
-//         });
-// }
 
   onSubmit(e){
     const name = this.refs.nameRef.value.trim();
@@ -18,6 +11,9 @@ export default class AddPostForm extends React.Component {
     const price = priceString;
     const description = this.refs.descriptionRef.value.trim();
     const image = this.refs.imageRef.value.trim();
+    const username = Meteor.user().username;
+
+
     // let users = Meteor.users.find({}).fetch();
     // let username = users[0].username;
     // console.log("NEW USERSSSSS", username);
@@ -42,7 +38,7 @@ export default class AddPostForm extends React.Component {
     e.preventDefault();
     if(description){
       //call meteor method post.insert with the data which is stored in description
-      Meteor.call('post.insert', [name, price, description, image])
+      Meteor.call('post.insert', [name, price, description, image, username])
       // Meteor.call('image.insert', fileObj)
       //clear whatever value wa,s in inputbox
       this.refs.nameRef.value = '';
@@ -74,7 +70,7 @@ export default class AddPostForm extends React.Component {
     return (
       <div>
       <div className="container centered">
-
+  <p>Should Display cover image field, as well as extra images fields</p>
                   <div className="col-lg-12 col-md-8 col-sm-12">
                       <form className=" form" onSubmit={this.onSubmit.bind(this)}>
 
@@ -88,7 +84,7 @@ export default class AddPostForm extends React.Component {
                             <input className = 'form-control form-control-lg' type="text" ref="descriptionRef" placeholder="Enter Description"/><br/>
 
                             <label >Enter URL for post image</label>
-                            <input id= "myFile" className = 'form-control form-control-lg' type="file" ref="imageRef"  placeholder= "Upload Image"/><br/>
+                            <input id= "myFile" className = 'form-control form-control-lg' type="text" ref="imageRef"  placeholder= "Upload Image"/><br/>
 
                             <button className='btn btn-primary btn-lg'>Add Post </button>
                       </form>

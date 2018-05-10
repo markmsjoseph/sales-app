@@ -76,16 +76,16 @@ export default class AllPost extends React.Component {
 
     render() {
       return (
-        <div>
-            <button onClick={this.onSortByDesc.bind(this)}>Sort by Price Asc(Largest to Smallest)</button>
-            <button onClick={this.onSortByAsec.bind(this)}>Sort by Price Desc(Smallest to Largest)</button>
-
-
-            <label >Search</label>
-            <input className = 'form-control form-control-lg' type="text" placeholder="Enter Keyword" onChange={this.handleSearch.bind(this)}/><br/>
-
-
-
+          <div  className="wrapper_search-and-filter">
+            <p>Should Display link to more images</p>
+                <div className="wrapper_sort-buttons">
+                      <button className=" sort_button " onClick={this.onSortByDesc.bind(this)}>Sort by Price Asc(Largest to Smallest)</button>
+                      <button className=" sort_button " onClick={this.onSortByAsec.bind(this)}>Sort by Price Desc(Smallest to Largest)</button>
+                </div>
+                <div className="wrapper_search">
+                      <label className="search-title">Search</label>
+                      <input className = 'form-control form-control-lg ' type="text" placeholder="Enter Keyword" onChange={this.handleSearch.bind(this)}/><br/>
+                </div>
             <div>
                   <FlipMove>
               {this.renderPostListItems()}

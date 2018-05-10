@@ -36,6 +36,7 @@ Meteor.methods({
           description:array[2],
           image:array[3],
           userId:this.userId,
+          username:array[4],
           isApproved:'no',
           cart:[]
         })

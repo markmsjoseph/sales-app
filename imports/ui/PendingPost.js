@@ -27,7 +27,8 @@ export default class PendingPost extends React.Component {
       return (
         <div>
           <p>Description: {this.props.description} </p>
-          <p>Original Poster: {this.props.userId} </p>
+          <p>Original Poster ID: {this.props.userId} </p>
+            <p>Poster's Username: {this.props.username} </p>
 
             <button onClick={this.approvePost.bind(this)}>Approve Post </button>
 

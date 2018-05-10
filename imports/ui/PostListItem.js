@@ -37,7 +37,7 @@ export default class PostListItem extends React.Component {
 
                   <h3 className='item__post-title'> {this.props.name} </h3>
                   <p> Price: ${this.props.price} </p>
-                  <p> Posted by: {this.props.userId} </p>
+                  <p> Posted by: {this.props.username} </p>
                   <img className ='item__image' src={this.props.image}/><br/>
                     <p>{this.props.description} </p>
 

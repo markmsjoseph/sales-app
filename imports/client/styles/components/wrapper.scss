@@ -5,6 +5,11 @@
   padding: 1.3rem;
 
 }
+.wrapper_search-and-filter{
+  margin: 0 auto;
+  background-color:#6da7d6;
+  padding: 1.3rem;
+}
 .wrapper__post{
     display: inline-block;
 }
@@ -28,4 +33,19 @@ width: 800px;
   padding: 1.3rem;
   text-align: center;
 
+}
+
+.wrapper_sort-buttons{
+  font-size: 14px;
+    border: 1px solid transparent;
+    color: black;
+    padding: 3px;
+    border-radius: 4px;
+    position: absolute;
+    right: 10px;
+}
+
+.wrapper_search{
+  margin: 0 auto;
+  max-width: 40rem;
 }

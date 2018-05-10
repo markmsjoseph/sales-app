@@ -34,7 +34,7 @@ export default class AdminPage extends React.Component {
           console.log("No user but trying to go back: In ComponentDidMount from Link.js");
           this.props.history.push('/');
         }
-        if(!(Meteor.userId() == "RwJJ3FN7Ab5rwEupB")){
+        if(!(Meteor.userId() == "ft8CNvQ7Txki9MPu6")){
           console.log("NOT AN ADMIN, redirecting to /");
           this.props.history.push('/home');
         }
@@ -113,6 +113,7 @@ export default class AdminPage extends React.Component {
     render() {
       return (
         <div>
+            <p>Fix to show username also, pending post displays images, all post displays images</p>
             <PrivateHeader title="Admin Page" shortDes="admin can delete users from this page. can also review post before adding them to all post "/>
               <Link to ="/home">Back to HomePage</Link><br></br>
               <br/>
