@@ -34,7 +34,8 @@ export default class AdminPage extends React.Component {
           console.log("No user but trying to go back: In ComponentDidMount from Link.js");
           this.props.history.push('/');
         }
-        if(!(Meteor.userId() == "ft8CNvQ7Txki9MPu6")){
+
+        if(!(Meteor.userId() == "HxL6yB4jb5Td5zEef")){
           console.log("NOT AN ADMIN, redirecting to /");
           this.props.history.push('/home');
         }
@@ -91,7 +92,7 @@ export default class AdminPage extends React.Component {
 
     displayUsers(){
         return this.state.users.map((post)=>{
-          return <UserComponent key={post._id} userId={post._id}  email={post.emails[0].address} />;
+          return <UserComponent key={post._id} userId={post._id}  email={post.emails[0].address} username={post.username}/>;
         })
     }
 
@@ -130,6 +131,7 @@ export default class AdminPage extends React.Component {
                       Session.set('whatToDisplay', e.target.value);
                     }}/> All Post
               </label>
+              <br/>
 
 
               {this.renderAllPendingPost()}

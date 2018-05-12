@@ -1,5 +1,6 @@
 import { Meteor } from 'meteor/meteor';
-
+import SimpleSchema from 'simpl-schema';
+import { Accounts } from 'meteor/accounts-base';
 // You have only the stub method when you use Meteor.methods you need a method on the server side, whereas the client side is optional to simulate latency compensation.
 
 // The way a Meteor call works is when you run a call it will immediately fire the client side one to simulate some UI effect while a response is returned from the server, then the server side call is fired.
@@ -13,22 +14,9 @@ import { Meteor } from 'meteor/meteor';
 
 import '../imports/api/post';
 import '../imports/api/images';
+import '../imports/api/users';
 import '../imports/api/chat';//needed because meteor method calls on the client need corresponding calls on the server
 Meteor.startup(() => {
-  // code to run on server at startup
-  //function called everytime before a new user is created
-  // Accounts.validateNewUser(()=>{
-  //
-  // });
-
-
-
-    // Accounts.onCreateUser((options, user) => {
-    //   user.roles = ['admin']
-    //   console.log("User IS: ", user );
-    //   return user;
-    //
-    // });
 
 
 });

@@ -25,24 +25,27 @@ export default class PendingPost extends React.Component {
 
     render() {
       return (
-        <div>
-          <p>Description: {this.props.description} </p>
-          <p>Original Poster ID: {this.props.userId} </p>
-            <p>Poster's Username: {this.props.username} </p>
+        <div className = "wrapper wrapper__post">
+              <div className="item">
+                    <h3 className='item__post-title'> {this.props.name} </h3>
+                    <p> Price: ${this.props.price} </p>
+                    <p> Posted by: {this.props.username} </p>
+                    <img className ='item__image' src={this.props.image}/><br/>
+                    <p>{this.props.description} </p>
 
-            <button onClick={this.approvePost.bind(this)}>Approve Post </button>
+                    <button onClick={this.approvePost.bind(this)}>Approve Post </button>
+                    <button onClick={()=>this.setState({isOpen:true})}>Delete Post</button>
+
+                    <Modal isOpen = {this.state.isOpen} contentLabel="Remove post">
+                          <p>Are you sure you want to delete this post, it will not be approved and be removed from the database? </p>
+                          <button onClick={this.deletePost.bind(this)}>Delete Post </button>
+                          <button onClick={()=>this.setState({isOpen:false})}>Cancel Delete Post</button>
+                    </Modal>
 
 
-            <button onClick={()=>this.setState({isOpen:true})}>Delete Post</button>
-          <Modal isOpen = {this.state.isOpen} contentLabel="Remove post">
-                <p>Are you sure you want to delete this post, it will not be approved and be removed from the database? </p>
-
-            <button onClick={this.deletePost.bind(this)}>Delete Post </button>
-            <button onClick={()=>this.setState({isOpen:false})}>Cancel Delete Post</button>
-          </Modal>
-
-
+                </div>
         </div>
+
       );
     }
 

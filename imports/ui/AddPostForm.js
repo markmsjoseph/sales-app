@@ -4,6 +4,13 @@ import {Images} from '../api/images';
 
 export default class AddPostForm extends React.Component {
 
+  constructor(props){
+    super(props);
+    this.state = {
+      error:''
+    };
+  }
+
 
   onSubmit(e){
     const name = this.refs.nameRef.value.trim();
@@ -35,17 +42,26 @@ export default class AddPostForm extends React.Component {
     // });
     // console.log("Insert complete");
 
-    e.preventDefault();
-    if(description){
+      e.preventDefault();
+
       //call meteor method post.insert with the data which is stored in description
-      Meteor.call('post.insert', [name, price, description, image, username])
+      Meteor.call('post.insert', [name, price, description, image, username], (err, result)=>{
+        if(err){
+            this.setState({error:err.reason});
+          }
+          else{
+            this.setState({error:''});
+          }
+
+      });
+
       // Meteor.call('image.insert', fileObj)
       //clear whatever value wa,s in inputbox
       this.refs.nameRef.value = '';
       this.refs.priceRef.value = '';
       this.refs.descriptionRef.value = '';
       this.refs.imageRef.value = '';
-    }
+
      // var file = document.getElementById('myFile').files[0];
      // console.log("FILE", file);
     // if(file){
@@ -69,11 +85,12 @@ export default class AddPostForm extends React.Component {
   render() {
     return (
       <div>
+            <p>Should Display cover image field, as well as extra images fields</p>
       <div className="container centered">
-  <p>Should Display cover image field, as well as extra images fields</p>
+
                   <div className="col-lg-12 col-md-8 col-sm-12">
                       <form className=" form" onSubmit={this.onSubmit.bind(this)}>
-
+                        <p className="login-error">  {this.state.error ? <p>{this.state.error}</p> : undefined }</p>
                             <label >Post Name</label>
                             <input className = 'form-control form-control-lg' type="text" ref="nameRef" placeholder="Post Name"/><br/>
 

@@ -53,7 +53,7 @@ export default class Home extends React.Component {
       // var uniqueID = Meteor.users.find({}).fetch();
       // // var username = Meteor.users.find({_id: uniqueID});
       // console.log("USERNAMEEE", uniqueID);
-      if(Meteor.userId() == "ft8CNvQ7Txki9MPu6"){
+      if(Meteor.userId() == "HxL6yB4jb5Td5zEef"){
 
           return(
             <div className=" item wrapper__post ">

@@ -18,7 +18,7 @@ export default class AllPost extends React.Component {
 
     //called after stuff is rendered to the screen in render
     componentDidMount() {
-      console.log("ComponentDidMount fires AllPost");
+      // console.log("ComponentDidMount fires AllPost");
       this.postTracker =  Tracker.autorun(() => {
           Meteor.subscribe('allPostSubscription');
           //find all links which are approved. then call fetch on cursor to get all link documents back
@@ -30,7 +30,7 @@ export default class AllPost extends React.Component {
 
     //fires right before component is removed from screen
     componentWillUnmount() {
-      console.log("Component Unmount fires PostList");
+      // console.log("Component Unmount fires PostList");
       //video 69 15:18 called to stop component from getting updated
       this.postTracker.stop();
     }
@@ -59,9 +59,9 @@ export default class AllPost extends React.Component {
       console.log(name);
 
       if (name!=""){
-          console.log("NAME TO SEARCH", name);
-          const allPost = Post.find({ $and:[{isApproved:'yes'}, {name:name} ] }).fetch();
-          console.log("SEARCH TERM", allPost);
+          // console.log("NAME TO SEARCH", name);
+          const allPost = Post.find({ $and:[{isApproved:'yes'}, {name: { '$regex' : name, '$options' : 'i' }} ] }).fetch();
+          // console.log("SEARCH TERM", allPost);
           this.setState({post:allPost});
       }
       else{

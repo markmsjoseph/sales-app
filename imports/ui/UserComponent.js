@@ -19,6 +19,7 @@ export default class UserComponent extends React.Component {
     render() {
       return (
         <div>
+          <p>User Name: {this.props.username} </p>
           <p>Email: {this.props.email} </p>
           <p>User ID: {this.props.userId} </p>
           <button onClick={()=>this.setState({isOpen:true})}>Remove User</button>

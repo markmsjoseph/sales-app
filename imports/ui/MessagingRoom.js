@@ -23,7 +23,7 @@ export default class MessagingRoom extends React.Component {
 
   //needs to display all msges, may need session to constantly update
     displayMessages(){
-        console.log("ComponentDidMount fires AllPost");
+        // console.log("ComponentDidMount fires AllPost");
         this.postTracker =  Tracker.autorun(() => {
             Meteor.subscribe('specificChatSubscription');
             const thisChat = Chat.find({senderId:Meteor.userId()}).fetch();

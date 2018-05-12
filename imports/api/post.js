@@ -1,5 +1,6 @@
 import { Meteor } from 'meteor/meteor';
 import { Mongo } from 'meteor/mongo';
+import SimpleSchema from 'simpl-schema';
 
 export const Post = new Mongo.Collection('post');
 
@@ -25,11 +26,45 @@ if(Meteor.isServer){
 Meteor.methods({
       //we use ' ' to use the . operator on the object property video 73 4:50
       'post.insert'(array){
-        console.log('INSERTING', array);
+        // console.log('INSERTING', array);
         //if user is not logged in throw error
         if(!this.userId){
           throw new Meteor.Error('not authorized');
         }
+
+        //lecture 74
+        try{
+            new SimpleSchema({
+              name:{
+                type:String,
+                min:1,
+                max:80
+              },
+              price:{
+                  type:Number,
+                  min:1
+              },
+              description:{
+                  type:String,
+                  optional:true,
+                  max:300
+              },
+              image:{
+                  type:String,
+                  regEx:SimpleSchema.RegEx.Url
+              }
+            }).validate({
+              name:array[0],
+              price:array[1],
+              description:array[2],
+              image:array[3]
+            })
+        }//end try
+        catch(e){
+            throw new Meteor.Error(400, e.message);
+        }
+
+
         Post.insert({
           name:array[0],
           price:array[1],

@@ -29,7 +29,11 @@ export default class PostListItem extends React.Component {
 
     render() {
       const customStyles = {content : {  top: '50%',  left: '50%',right: 'auto',bottom : 'auto',marginRight : '-50%',  transform : 'translate(-50%, -50%)'}};
-
+      let redirectToChat = `/chat/${this.props.userId}/${this.props.username}`;
+       if(Meteor.userId() == this.props.userId){
+         console.log("TRYING TO MESSAGE YOURSELF");
+         redirectToChat = '';
+       }
 
       return (
           <div className = "wrapper wrapper__post">
@@ -47,11 +51,10 @@ export default class PostListItem extends React.Component {
                               <button onClick={()=>this.setState({isOpen:false})}>Ok</button>
 
                   </Modal>
-                  <Link to ={`/chat/${this.props.userId}`} className='item__button'>go to chat</Link>
+                  <Link to ={redirectToChat} className='item__button'>go to chat</Link>
                 </div>
           </div>
       );
     }
-
 
   }

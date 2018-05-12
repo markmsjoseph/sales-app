@@ -21,7 +21,9 @@ Meteor.methods({
         console.log("CREATING A NEW CHAT");
         Chat.insert({
           senderId: this.userId,
-          receiverId: sellerId,
+          receiverId: sellerId[0],
+          recieverIdName:sellerId[1],
+          senderIdName:sellerId[2],
           date:new Date(),
           messages:[]
         })
