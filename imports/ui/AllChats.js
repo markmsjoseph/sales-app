@@ -3,6 +3,7 @@ import {Tracker} from 'meteor/tracker';
 import { Meteor } from 'meteor/meteor';
 import { Link } from 'react-router-dom';
 import {Chat} from '../api/chat';
+import Modal from 'react-modal';
 
 
 //Pull from database all chats where either sender or reciever match id
@@ -12,19 +13,17 @@ export default class AllChats extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      isOpen:false,
       msg:[],
-      arrayWithoutDuplicates:[],
-        currentChatIDName:""
+      currentChatIDName:""
     };
   }
 
 
   //find all chats where you, the current user is either the sender and reciever
   componentDidMount() {
-    console.log();
-    console.log("YOUR ID IS:",Meteor.userId());
           this.postTracker =  Tracker.autorun(() => {
-
+                  //used to get the username of the current user
                   if(Meteor.user()){
                     this.setState(()=>{
                       return{
@@ -32,6 +31,7 @@ export default class AllChats extends React.Component {
                       }
                     });
                   }
+
                   Meteor.subscribe('specificChatSubscription');
 
                   //find chats where you are the sender
@@ -52,12 +52,74 @@ export default class AllChats extends React.Component {
                       msg:allChatsArray
                     }
                   });
-                  // console.log("ALL CHATS ARRAY", allChatsArray);
-                  // console.log("STATE", this.state.msg, this.state.msg2);
-
           });//end tracker autorun
 
   }
+
+  // <button onClick={()=>this.setState({isOpen:true})}>Delete Chat</button>
+  //
+  // <Modal isOpen = {this.state.isOpen} contentLabel="Remove post">
+  //       <p>Are you sure you want to delete this chat? </p>
+  //       <button onClick={this.deleteChat.bind(this,post._id)}>Delete Chat </button>
+  //       <button onClick={()=>this.setState({isOpen:false})}>Cancel Delete Chat</button>
+  // </Modal>
+  // deleteChat(postId){
+  //     this.setState({isOpen:false})
+  //     Meteor.call('chat.remove', postId)
+  // }
+
+  //called in render function to display all chats
+  renderMessages(){
+
+      return this.state.msg.map((post)=>{
+            //if the current user's name is the same as the name of the person who sent the message, use the reciever's name instead
+            let name = post.recieverIdName;
+            let id = post.senderId;
+            if (post.recieverIdName == this.state.currentChatIDName ){
+              name = post.senderIdName
+              id = post.receiverId
+      }
+
+      return <div>
+
+          <Link to ={`/chat/${id}`}> <p>Go to chat with </p><h4>{name}</h4></Link>
+                  <br/>
+
+
+            </div>
+    })
+  }
+
+
+  render() {
+    return (
+      <div>
+        <Link to ="/home">Back to all post</Link>
+        <h1>Messaging app</h1>
+        {this.renderMessages()}
+
+
+      </div>
+
+    );
+  }
+
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   //
   // removeDuplicates(){
@@ -93,38 +155,3 @@ export default class AllChats extends React.Component {
   //       }
   //     });
   // }
-
-
-  renderMessages(){
-    return this.state.msg.map((post)=>{
-      //if the current user's name is the same as the name of the person who sent the message, use the reciever's name instead
-      let name = post.recieverIdName;
-      let id = post.senderId;
-      if (post.recieverIdName == this.state.currentChatIDName ){
-        name = post.senderIdName
-        id = post.receiverId
-      }
-      return <div>
-          <Link to ={`/chat/${id}`}> <p>Go to chat with </p><h4>{name}</h4></Link>
-                  <br/>
-            </div>
-    })
-  }
-
-    //
-    // <button onClick={this.removeDuplicates.bind(this)}>Show All Chats </button>
-  render() {
-    return (
-      <div>
-        <Link to ="/home">Back to all post</Link>
-        <h1>Messaging app</h1>
-        {this.renderMessages()}
-
-
-      </div>
-
-    );
-  }
-
-
-  }

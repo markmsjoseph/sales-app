@@ -3,6 +3,7 @@ import { Meteor } from 'meteor/meteor';
 import {Session} from 'meteor/session';
 import {Chat} from '../api/chat';
 import {Post} from '../api/post';
+import {browserHistory,withRouter} from "react-router-dom"
 
 export default class ChatComponent extends React.Component {
 

@@ -53,6 +53,15 @@ Meteor.methods({
         Chat.update({senderId:arrayOfData[0], receiverId:arrayOfData[1]},
         {$push:{messages : arrayOfData[2]}}
         )
+      },
+
+      'chat.remove'(postId){
+        //if user is not logged in throw error
+        if(!this.userId){
+          throw new Meteor.Error('not authorized');
+        }
+        //update specific post where user id matches and push the id of the post you are saving to the cart array of this specific post item
+        Chat.remove({_id : postId})
       }
 
 });

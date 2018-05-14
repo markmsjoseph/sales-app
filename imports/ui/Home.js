@@ -7,9 +7,6 @@ import PrivateHeader from './PrivateHeader';
 
 
 
-// <div className=" item wrapper__post ">
-//     <Link to ="/managePost">Manage Your Post</Link>
-// </div>
 
 
 
@@ -81,6 +78,9 @@ export default class Home extends React.Component {
 
                       <div className=" item wrapper__post ">
                           <Link to ="/allChats">All Chats</Link>
+                      </div>
+                      <div className=" item wrapper__post ">
+                          <Link to ="/managePost">Manage Your Post</Link>
                       </div>
 
 

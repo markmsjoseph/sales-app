@@ -4,6 +4,7 @@ import {Tracker} from 'meteor/tracker';
 import { Meteor } from 'meteor/meteor';
 import { Link } from 'react-router-dom';
 import EditExpenseForm from './EditExpenseForm';
+import Modal from 'react-modal';
 
 export default class EditPost extends React.Component {
 
@@ -15,7 +16,8 @@ export default class EditPost extends React.Component {
       name:'',
       price:'',
       description:'',
-      image:''
+      image:'',
+      isOpen:false
     };
     // this.updatePost = this.updatePost.bind(this);
     // this.onNameChange = this.onNameChange.bind(this);
@@ -25,7 +27,7 @@ export default class EditPost extends React.Component {
 
   //called after stuff is rendered to the screen in render
   componentDidMount() {
-    console.log("ComponentDidMount fires PostList");
+
     this.postTracker =  Tracker.autorun(() => {
       //find post where the is is the current user
         Meteor.subscribe('specificPostSubscription');
@@ -37,7 +39,7 @@ export default class EditPost extends React.Component {
 
   //fires right before component is removed from screen
   componentWillUnmount() {
-    console.log("Component Unmount fires PostList");
+
     //video 69 15:18 called to stop component from getting updated
     this.postTracker.stop();
   }
@@ -95,7 +97,13 @@ export default class EditPost extends React.Component {
   //   })
   // }
 
+  deleteChat(postId){
+      this.setState({isOpen:false})
+      Meteor.call('post.remove', postId)
+  }
+
   renderPostListItems(){
+    console.log("IN EDITPOST");
        // <Link to ={`/EditExpenseForm/${post._id}` id={post._id} }>Update Post</Link>
     return this.state.post.map((post)=>{
       return (
@@ -108,7 +116,14 @@ export default class EditPost extends React.Component {
                        <img className ='item__image' src={post.image}/><br/><br/>
 
                        <div className=" item wrapper__post ">
-                         <Link to ={`/EditExpenseForm/${post._id}`} className='item__button' >Update Post</Link>
+                         <button onClick={()=>this.setState({isOpen:true})}>Delete Post</button>
+
+                       <Modal isOpen = {this.state.isOpen} contentLabel="Remove post">
+                                <p>Are you sure you want to delete this Post? </p>
+                                <button onClick={this.deleteChat.bind(this,post._id)}>Delete Post </button>
+                                <button onClick={()=>this.setState({isOpen:false})}>Cancel Delete Post</button>
+                          </Modal>
+
 
                        </div>
                 </div>
