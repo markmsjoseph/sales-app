@@ -115,8 +115,8 @@ export default class EditPost extends React.Component {
                        <p>{post.description}</p>
                        <img className ='item__image' src={post.image}/><br/><br/>
 
-                       <div className=" item wrapper__post ">
-                         <button onClick={()=>this.setState({isOpen:true})}>Delete Post</button>
+
+                         <button className='addPost__form__Submit' onClick={()=>this.setState({isOpen:true})}>Delete Post</button>
 
                        <Modal isOpen = {this.state.isOpen} contentLabel="Remove post">
                                 <p>Are you sure you want to delete this Post? </p>
@@ -125,7 +125,6 @@ export default class EditPost extends React.Component {
                           </Modal>
 
 
-                       </div>
                 </div>
         </div>
       )

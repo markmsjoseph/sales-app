@@ -84,30 +84,25 @@ export default class AddPostForm extends React.Component {
 
   render() {
     return (
-      <div>
-            <p>Should Display cover image field, as well as extra images fields</p>
-      <div className="container centered">
+      <div className="addpost__WrapperForm">
 
-                  <div className="col-lg-12 col-md-8 col-sm-12">
-                      <form className=" form" onSubmit={this.onSubmit.bind(this)}>
+                      <form  onSubmit={this.onSubmit.bind(this)}>
                         <p className="login-error">  {this.state.error ? <p>{this.state.error}</p> : undefined }</p>
-                            <label >Post Name</label>
+                            <label className ="addPostForm__label">Post Name</label>
                             <input className = 'form-control form-control-lg' type="text" ref="nameRef" placeholder="Post Name"/><br/>
 
-                            <label >Post Price</label>
+                            <label className ="addPostForm__label">Post Price</label>
                             <input className = 'form-control form-control-lg' type="text" ref="priceRef" placeholder="Enter Price"/><br/>
 
-                            <label >Post Description</label>
+                            <label className ="addPostForm__label">Post Description</label>
                             <input className = 'form-control form-control-lg' type="text" ref="descriptionRef" placeholder="Enter Description"/><br/>
 
-                            <label >Enter URL for post image</label>
+                            <label className ="addPostForm__label">Enter URL for post image</label>
                             <input id= "myFile" className = 'form-control form-control-lg' type="text" ref="imageRef"  placeholder= "Upload Image"/><br/>
 
-                            <button className='btn btn-primary btn-lg'>Add Post </button>
+                            <button className='addPost__form__Submit'>Add Post </button>
                       </form>
-                  </div>
 
-              </div>
       </div>
     );
   }

@@ -114,23 +114,33 @@ export default class AdminPage extends React.Component {
     render() {
       return (
         <div>
-            <p>Fix to show username also, pending post displays images, all post displays images</p>
-            <PrivateHeader title="Admin Page" shortDes="admin can delete users from this page. can also review post before adding them to all post "/>
-              <Link to ="/home">Back to HomePage</Link><br></br>
+          <div className = "wrapper wrapper-top">
+                <PrivateHeader title="Sell Your Stuff" subtitle="Admin Panel" />
+                <div className="back_to_all_post">
+                      <Link to ="/home">Back to all post</Link>
+                </div>
+            </div>
               <br/>
-              <label>
-                    <input type="radio" name="button" value="users" onChange={(e)=>{
-                      Session.set('whatToDisplay', e.target.value);
-                    }}/> All Users
+                      <div className="wrapper__adminPageRadioButtons">
 
-                    <input type="radio" name="button" value="pending" onChange={(e)=>{
-                      Session.set('whatToDisplay', e.target.value);
-                    }}/> Pending Post
+                                  <label className="radioButtons">
+                                        <input type="radio" name="button" value="users" onChange={(e)=>{
+                                          Session.set('whatToDisplay', e.target.value);
+                                        }}/> All Users
+                                  </label>
 
-                    <input type="radio" name="button" value="all"onChange={(e)=>{
-                      Session.set('whatToDisplay', e.target.value);
-                    }}/> All Post
-              </label>
+                                  <label className="radioButtons">
+                                        <input type="radio" name="button" value="pending" onChange={(e)=>{
+                                          Session.set('whatToDisplay', e.target.value);
+                                        }}/> Pending Post
+                                  </label>
+
+                                  <label className="radioButtons">
+                                        <input type="radio" name="button" value="all"onChange={(e)=>{
+                                          Session.set('whatToDisplay', e.target.value);
+                                        }}/> All Post
+                                  </label>
+                        </div>
               <br/>
 
 

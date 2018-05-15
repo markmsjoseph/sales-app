@@ -89,7 +89,7 @@ export default class SavedPost extends React.Component {
                              <p>Posted by:{post.userId}</p>
                              <p>Price:{post.price}</p>
                              <img className ='item__image' src={post.image}/><br/><br/>
-                            <button onClick={this.removeFromCart.bind(this,post._id)}>Remove From Cart </button>
+                            <button className='addPost__form__Submit' onClick={this.removeFromCart.bind(this,post._id)}>Remove From Cart </button>
                       </div>
               </div>
             )
@@ -100,8 +100,12 @@ export default class SavedPost extends React.Component {
     render() {
       return (
         <div>
-          <PrivateHeader title="Your Saved Post" shortDes="users can see their saved post. ONLY SPECIFIC USER CAN VIEW THIS PAGE "/>
-          <Link to ="/home">Back to all post</Link>
+          <div className = "wrapper wrapper-top">
+                <PrivateHeader title="Sell Your Stuff" subtitle="Saved Post" />
+                <div className="back_to_all_post">
+                      <Link to ="/home">Back to all post</Link>
+                </div>
+          </div>
           <div>
           {this.renderPostListItems()}
           </div>

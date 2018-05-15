@@ -1,10 +1,43 @@
 
 .wrapper{
   margin: 0 auto;
-  max-width: 50rem;
   padding: 1.3rem;
+}
+
+.wrapper__form{
+  margin: 0 auto;
+  padding: 1.3rem;
+  text-align: center;
+  padding: 20px 12px 10px 20px;
+  font: 13px Arial, Helvetica, sans-serif;
+  max-width: 500px;
+}
+//top background color where main heading is
+.wrapper-top{
+background: -webkit-linear-gradient(top, #260387 0%,#650dd8 100%); /* Chrome10-25,Safari5.1-6 */
+}
+.wrapper-top-search{
+  background: -webkit-linear-gradient(top, #640cd7 0%, #7047a7 100%);
+}
+//top headings under sell your stuff ie. add post etc
+.wrapper-top-main-links{
+    text-align: center;
+    a{
+     display: inline-block;
+     padding: 20px;
+     color: white;
+     font-size: 24px;
+     font-family: sans-serif;
+     text-decoration: none;
+   }
+
+   a:hover{
+     color: orange;
+
+   }
 
 }
+
 .wrapper_search-and-filter{
   margin: 0 auto;
   background-color:#6da7d6;
@@ -18,8 +51,8 @@
     border-color: #6da7d6;
     background-color: #ffffff;
     border-radius: 19px;
-width: 800px;
- height: 400px;
+    width: 800px;
+     height: 400px;
 }
 
 .wrapper__login-box{
@@ -29,7 +62,6 @@ width: 800px;
 
 .wrapper__main-buttons{
   margin: 0 auto;
-  max-width: 60rem;
   padding: 1.3rem;
   text-align: center;
 

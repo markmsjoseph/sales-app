@@ -17,9 +17,12 @@ export default class ManagePost extends React.Component {
     render() {
       return (
         <div>
-          <PrivateHeader title="Edit or Delete Post" shortDes="users can edit details of post on this page and can delete a post. ONLY SPECIFIC USER CAN SEE THIS PAGE "/>
-              <Link to ="/home">Back to all post</Link>
-
+          <div className = "wrapper wrapper-top">
+                <PrivateHeader title="Sell Your Stuff" subtitle="Edit or Delete Post" />
+                <div className="back_to_all_post">
+                      <Link to ="/home">Back to all post</Link>
+                </div>
+              </div>
               <EditPost />
 
         </div>

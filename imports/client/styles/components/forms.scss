@@ -18,5 +18,23 @@
       padding: 7px;
       outline: none;
 }
+.search-form{
+  text-align: center;
+}
 
-  
+// Create placeholder mixin
+@mixin placeholder($color, $size:"") {
+      &::-webkit-input-placeholder {
+        color: $color;
+            @if $size != "" {
+              font-size: $size;
+            }
+      }
+
+}
+
+
+// Use placeholder mixin (the size parameter is optional)
+[placeholder] {
+  @include placeholder(#260387, 16px);
+}

@@ -1,11 +1,16 @@
 
 .title-bar{
-  color: white;
-  background-color: blue;
+  font-size: 45px;
+      text-align: center;
+      color: orange;
+      font-family: sans-serif;
+      font-weight: 600;
 
 }
-
-.title-bar__font{
-  font-size: 39px;
-  text-align: center;
+.subtitle-bar{
+  font-size: 35px;
+      text-align: center;
+      color: white;
+      font-family: sans-serif;
+      font-weight: 500;
 }

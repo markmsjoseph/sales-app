@@ -33,8 +33,8 @@ export default class PendingPost extends React.Component {
                     <img className ='item__image' src={this.props.image}/><br/>
                     <p>{this.props.description} </p>
 
-                    <button onClick={this.approvePost.bind(this)}>Approve Post </button>
-                    <button onClick={()=>this.setState({isOpen:true})}>Delete Post</button>
+                    <button className='addPost__form__Submit' onClick={this.approvePost.bind(this)}>Approve Post </button>
+                    <button className='addPost__form__Submit' onClick={()=>this.setState({isOpen:true})}>Delete Post</button>
 
                     <Modal isOpen = {this.state.isOpen} contentLabel="Remove post">
                           <p>Are you sure you want to delete this post, it will not be approved and be removed from the database? </p>

@@ -50,14 +50,14 @@ export default class PostListItem extends React.Component {
                   <img className ='item__image' src={this.props.image}/><br/>
                     <p>{this.props.description} </p>
 
-                  <button className='item__button' onClick={this.savePost.bind(this)}>Save Post </button>
+                  <button className='savepost__button' onClick={this.savePost.bind(this)}>Save Post </button>
                   <Modal  style={customStyles} isOpen = {this.state.isOpen} contentLabel="Remove post">
                     <p>Your post has been saved </p>
                               <button onClick={()=>this.setState({isOpen:false})}>Ok</button>
 
                   </Modal>
 
-                  <Link to ={redirectToChat} className='item__button'>go to chat</Link>
+                  <Link to ={redirectToChat} className='goToChat__button'>go to chat</Link>
                 </div>
           </div>
       );

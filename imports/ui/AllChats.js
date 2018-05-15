@@ -4,7 +4,7 @@ import { Meteor } from 'meteor/meteor';
 import { Link } from 'react-router-dom';
 import {Chat} from '../api/chat';
 import Modal from 'react-modal';
-
+import PrivateHeader from './PrivateHeader';
 
 //Pull from database all chats where either sender or reciever match id
 export default class AllChats extends React.Component {
@@ -94,7 +94,12 @@ export default class AllChats extends React.Component {
   render() {
     return (
       <div>
-        <Link to ="/home">Back to all post</Link>
+        <div className = "wrapper wrapper-top">
+              <PrivateHeader title="Sell Your Stuff" subtitle="All Chats" />
+              <div className="back_to_all_post">
+                    <Link to ="/home">Back to all post</Link>
+              </div>
+            </div>
         <h1>Messaging app</h1>
         {this.renderMessages()}
 

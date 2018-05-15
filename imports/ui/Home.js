@@ -53,7 +53,7 @@ export default class Home extends React.Component {
       if(Meteor.userId() == "HxL6yB4jb5Td5zEef"){
 
           return(
-            <div className=" item wrapper__post ">
+            <div className="  wrapper__post ">
               <Link to ="/adminPage">Admin Page</Link>
             </div>
           );
@@ -64,27 +64,17 @@ export default class Home extends React.Component {
     render() {
       return (
         <div>
+        <div className = "wrapper wrapper-top">
+                    <PrivateHeader  title="Sell Your Stuff" shortDes="users should be able to see all post on this page. Post will contain a image, price and short description. Each post will a link to more details about it. EVERYONE CAN SEE EVERYTHING ON THIS PAGE " />
+                    <p className = "logged-in-as">Logged in as:{this.state.username} </p>
 
-            <PrivateHeader className = "title-bar" title="All Post" shortDes="users should be able to see all post on this page. Post will contain a image, price and short description. Each post will a link to more details about it. EVERYONE CAN SEE EVERYTHING ON THIS PAGE " />
-            <p>Logged in as:{this.state.username} </p>
-            <div className="wrapper__main-buttons">
-                      <div className=" item wrapper__post ">
+                    <div className="wrapper-top-main-links">
                         <Link to ="/addPost">Add New Item To Sell</Link>
+                        <Link to ="/savedPost">Saved Post</Link>
+                        <Link to ="/allChats">All Chats</Link>
+                        <Link to ="/managePost">Manage Your Post</Link>
+                        {this.renderAdminPageButton()}
                       </div>
-
-                      <div className=" item wrapper__post ">
-                          <Link to ="/savedPost">Saved Post</Link>
-                      </div>
-
-                      <div className=" item wrapper__post ">
-                          <Link to ="/allChats">All Chats</Link>
-                      </div>
-                      <div className=" item wrapper__post ">
-                          <Link to ="/managePost">Manage Your Post</Link>
-                      </div>
-
-
-                      {this.renderAdminPageButton()}
             </div>
 
 

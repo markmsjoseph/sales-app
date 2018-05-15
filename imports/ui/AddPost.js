@@ -19,12 +19,17 @@ export default class AddPost extends React.Component {
     render() {
       return (
         <div>
-          <PrivateHeader title="Add Your Post" shortDes="users should be able to upload their post data from this page. EVERYONE CAN GO TO THIS PAGE" />
-          <Link to ="/home">Back to all post</Link>
+              <div className = "wrapper wrapper-top">
+                    <PrivateHeader title="Sell Your Stuff" subtitle="Add New Post" />
+                    <div className="back_to_all_post">
+                          <Link to ="/home">Back to all post</Link>
+                    </div>
+              </div>
 
-          <AddPostForm/>
-
-
+              <div className="wrapper">
+                  <AddPostForm/>
+              </div>
+              
         </div>
       );
     }
