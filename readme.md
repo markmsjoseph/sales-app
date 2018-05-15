@@ -7,11 +7,8 @@ TO DO:
       1.Public page for non logged in persons
 
       2.STYLING:
-                  fix overflow of description
                   bootstrap mobile
-                  abnormal sized images
-                  modal
-                  hover effect for each box
+
 
 
 IMPROVEMENTS(not implemented because of server requirements):

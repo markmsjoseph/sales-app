@@ -3,6 +3,7 @@
 .wrapper{
   margin: 0 auto;
   padding: 1.3rem;
+  text-align:center;
 }
 
 .wrapper__form{
@@ -46,7 +47,13 @@ background: -webkit-linear-gradient(top, #260387 0%,#650dd8 100%); /* Chrome10-2
 }
 .wrapper__post{
     display: inline-block;
+     transition: all .2s ease-in-out;
 }
+
+.wrapper__post:hover{
+    transform: scale(1.1);
+}
+
 .wrapper__box{
     border: 4px solid;
     border-color: white;

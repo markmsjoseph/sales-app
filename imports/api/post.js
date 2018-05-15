@@ -38,16 +38,16 @@ Meteor.methods({
               name:{
                 type:String,
                 min:1,
-                max:80
+                max:30
               },
               price:{
                   type:Number,
-                  min:1
+                  min:1,
+                  max:10000000
               },
               description:{
                   type:String,
-                  optional:true,
-                  max:300
+                  max:40
               },
               image:{
                   type:String,

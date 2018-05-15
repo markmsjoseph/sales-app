@@ -20,7 +20,12 @@ export default class AddPostForm extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      error:''
+      error:'',
+      characterCount:0,
+      nameCharacterCount:0,
+      countError:"",
+      nameError:"",
+      numberError:''
     };
   }
 
@@ -96,7 +101,45 @@ export default class AddPostForm extends React.Component {
   }
 
 
+dispayCharacters(e){
+  let count = e.target.value.length;
+  if(count>= 40){
+      this.setState({countError:"Character Count Exceeded"});
+  }
+  else{
+      this.setState({countError:""});
+  }
+    this.setState((previousState)=> {
+          return {
+             characterCount:  count
+          };
+    });
+}
 
+nameCharacters(e){
+  let count = e.target.value.length;
+  if(count>= 30){
+      this.setState({nameError:"Character Count Exceeded"});
+  }
+  else{
+      this.setState({nameError:""});
+  }
+    this.setState((previousState)=> {
+          return {
+             nameCharacterCount:  count
+          };
+    });
+}
+
+numberCharacters(e){
+  let count = e.target.value.length;
+  if(count>= 8){
+      this.setState({numberError:"Character Count Exceeded"});
+  }
+  else{
+      this.setState({numberError:""});
+  }
+}
 
 
   render() {
@@ -105,14 +148,24 @@ export default class AddPostForm extends React.Component {
 
                       <form  onSubmit={this.onSubmit.bind(this)}>
                         <p className="login-error">  {this.state.error ? <p>{this.state.error}</p> : undefined }</p>
+
+
                             <label className ="addPostForm__label">Post Name</label>
-                            <input className = 'form-control form-control-lg' type="text" ref="nameRef" placeholder="Post Name"/><br/>
+                                <p className="login-error">  {this.state.nameError} </p>
+                              <p>{this.state.nameCharacterCount}/30 characters left</p>
+                            <input className = 'form-control form-control-lg' type="text" ref="nameRef" placeholder="Post Name" onKeyUp={this.nameCharacters.bind(this)} /><br/>
 
                             <label className ="addPostForm__label">Post Price</label>
-                            <input className = 'form-control form-control-lg' type="text" ref="priceRef" placeholder="Enter Price"/><br/>
+                            <p className="login-error">  {this.state.numberError} </p>
+                                <p>Must be number(no special characters) </p>
+                            <input className = 'form-control form-control-lg' type="text" ref="priceRef" placeholder="Enter Price" onKeyUp={this.numberCharacters.bind(this)} /><br/>
                             <p id="holder"> </p>
+
+
                             <label className ="addPostForm__label">Post Description</label>
-                            <input id= "postDes" className = 'form-control form-control-lg' type="text" ref="descriptionRef" placeholder="Enter Description"/><br/>
+                            <p className="login-error">  {this.state.countError} </p>
+                            <p>{this.state.characterCount}/40 characters left</p>
+                            <input id= "postDes" className = 'form-control form-control-lg' type="text" ref="descriptionRef" placeholder="Enter Description" onKeyUp={this.dispayCharacters.bind(this)}/><br/>
 
                             <label className ="addPostForm__label">Enter URL for post image</label>
                             <input id= "myFile" className = 'form-control form-control-lg' type="text" ref="imageRef"  placeholder= "Upload Image"/><br/>
