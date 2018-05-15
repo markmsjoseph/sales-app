@@ -80,11 +80,9 @@ export default class AllChats extends React.Component {
               id = post.receiverId
       }
 
-      return <div>
+      return <div className = "chat">
 
-          <Link to ={`/chat/${id}`}> <p>Go to chat with </p><h4>{name}</h4></Link>
-                  <br/>
-
+          <Link to ={`/chat/${id}`}> <li>Chat with {name}</li></Link>
 
             </div>
     })
@@ -100,7 +98,7 @@ export default class AllChats extends React.Component {
                     <Link to ="/home">Back to all post</Link>
               </div>
             </div>
-        <h1>Messaging app</h1>
+        <h1 className = "chatHeader">Messaging app</h1>
         {this.renderMessages()}
 
 

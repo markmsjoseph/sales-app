@@ -1,4 +1,5 @@
 
+
 .wrapper{
   margin: 0 auto;
   padding: 1.3rem;
@@ -48,17 +49,14 @@ background: -webkit-linear-gradient(top, #260387 0%,#650dd8 100%); /* Chrome10-2
 }
 .wrapper__box{
     border: 4px solid;
-    border-color: #6da7d6;
+    border-color: white;
     background-color: #ffffff;
     border-radius: 19px;
     width: 800px;
      height: 400px;
 }
 
-.wrapper__login-box{
-  padding-top: 60px;
-  text-align: center;
-}
+
 
 .wrapper__main-buttons{
   margin: 0 auto;

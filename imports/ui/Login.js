@@ -91,7 +91,7 @@ export default class Login extends React.Component {
                                               <br></br>
                                               <input className = 'form-control form-control-lg' type="password" name="password" ref = "myPassword" placeholder= "password"/>
                                               <br></br>
-                                              <button className='btn btn-primary btn-lg'> Login</button>
+                                              <button className='submitLogin_register_button btn btn-primary btn-lg'> Login</button>
                                           </form>
                                    </TabPanel>
 
@@ -111,7 +111,7 @@ export default class Login extends React.Component {
                                                <input className = 'form-control form-control-lg' type="password" name="password" ref = "myPassword" placeholder= "Password"/>
                                                <br></br>
 
-                                                <button className='btn btn-primary btn-lg'> Create Account</button>
+                                                <button className=' submitLogin_register_button btn btn-primary btn-lg'> Create Account</button>
                                          </form>
 
                                   </TabPanel>

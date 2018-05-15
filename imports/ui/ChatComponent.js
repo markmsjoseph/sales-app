@@ -151,24 +151,29 @@ export default class ChatComponent extends React.Component {
 
                     Meteor.call('chat.insertMsg',[yourID, idTwo, userAndMessage])
                     console.log("1-----INSERT ANOTHER MSG: YOUR ID ", Meteor.userId(), "RECIEVER ID ",  this.props.props.location.pathname.split('t/')[1]);
+                      this.refs.senderMsg.value = '';
                 }//end else
 
                 else {
                     const currentChat = Chat.find({senderId:idTwo, receiverId:yourID}).fetch();
                     Meteor.call('chat.insertMsg',[idTwo, yourID, userAndMessage])
                     console.log("2-----INSERT ANOTHER MSG: YOUR ID ", Meteor.userId(), "RECIEVER ID ",  this.props.props.location.pathname.split('t/')[1]);
+                      this.refs.senderMsg.value = '';
                 }//end else
         }
   }
 
 
   renderMessages(){
-    return this.state.msg.map((post)=>{
+    return this.state.msg.reverse().map((post)=>{
       return <div>
-                  <p>Id: {post.yourId}</p>
-                  <p>{post.message}</p>
-                  <br/>
-            </div>
+
+                  <div className="chatBox">
+                      <p className = "chatSender_Title">{post.yourId} says:</p>
+                        <p className = "chatActualMessage">{post.message}</p>
+
+                  </div>
+          </div>
     })
   }
 
@@ -179,8 +184,8 @@ export default class ChatComponent extends React.Component {
     return (
       <div>
         <form onSubmit={this.onSubmit.bind(this)}>
-              <input type="text" ref="senderMsg" placeholder="Enter Message"/>
-              <button>Send Message </button>
+              <input className=" chatInputBox " type="text" ref="senderMsg" placeholder="Enter Message"/>
+              <button className = "sendChatMessage">Send Message </button>
         </form>
 
         {this.renderMessages()}

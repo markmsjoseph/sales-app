@@ -2,6 +2,19 @@ import React from 'react';
 import { Meteor } from 'meteor/meteor';
 import {Images} from '../api/images';
 
+// let holder = document.getElementById("charsLeft");
+// let commentsInput = document.getElementById("postDes");
+// function updateRemainingCharacters() {
+//
+//     var charsLeft = 300 - commentsInput.value.length;
+//     holder.innerText = "(" + charsLeft + ")";
+//
+// }
+// //
+// commentsInput.addEventListener('keyup', updateRemainingCharacters);
+// commentsInput.addEventListener('paste', updateRemainingCharacters);
+
+
 export default class AddPostForm extends React.Component {
 
   constructor(props){
@@ -82,6 +95,10 @@ export default class AddPostForm extends React.Component {
 
   }
 
+
+
+
+
   render() {
     return (
       <div className="addpost__WrapperForm">
@@ -93,9 +110,9 @@ export default class AddPostForm extends React.Component {
 
                             <label className ="addPostForm__label">Post Price</label>
                             <input className = 'form-control form-control-lg' type="text" ref="priceRef" placeholder="Enter Price"/><br/>
-
+                            <p id="holder"> </p>
                             <label className ="addPostForm__label">Post Description</label>
-                            <input className = 'form-control form-control-lg' type="text" ref="descriptionRef" placeholder="Enter Description"/><br/>
+                            <input id= "postDes" className = 'form-control form-control-lg' type="text" ref="descriptionRef" placeholder="Enter Description"/><br/>
 
                             <label className ="addPostForm__label">Enter URL for post image</label>
                             <input id= "myFile" className = 'form-control form-control-lg' type="text" ref="imageRef"  placeholder= "Upload Image"/><br/>

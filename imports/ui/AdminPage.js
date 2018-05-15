@@ -124,21 +124,27 @@ export default class AdminPage extends React.Component {
                       <div className="wrapper__adminPageRadioButtons">
 
                                   <label className="radioButtons">
-                                        <input type="radio" name="button" value="users" onChange={(e)=>{
+
+                                        <input type="radio" name="button" value="users"  onChange={(e)=>{
                                           Session.set('whatToDisplay', e.target.value);
                                         }}/> All Users
+                                          <span class="checkmark"></span>
                                   </label>
 
                                   <label className="radioButtons">
+
                                         <input type="radio" name="button" value="pending" onChange={(e)=>{
                                           Session.set('whatToDisplay', e.target.value);
                                         }}/> Pending Post
+                                          <span class="checkmark"></span>
                                   </label>
 
                                   <label className="radioButtons">
+
                                         <input type="radio" name="button" value="all"onChange={(e)=>{
                                           Session.set('whatToDisplay', e.target.value);
                                         }}/> All Post
+                                          <span class="checkmark"></span>
                                   </label>
                         </div>
               <br/>
