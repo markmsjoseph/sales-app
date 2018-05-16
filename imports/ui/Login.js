@@ -73,7 +73,7 @@ export default class Login extends React.Component {
   render() {
     return (
       <div>
-
+<Link to ="/" className = "logoutButton">Back to Home</Link>
                 <div className="vertical-center" >
                       <div className="wrapper wrapper__box wrapper__login-box">
                             <Tabs defaultIndex={1} onSelect={index => console.log(index)}>

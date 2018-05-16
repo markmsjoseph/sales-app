@@ -4,8 +4,6 @@
 
 
 TO DO:
-      1.Public page for non logged in persons
-
       2.STYLING:
                   bootstrap mobile
 

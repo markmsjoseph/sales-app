@@ -18,9 +18,10 @@ import AdminPage from '../imports/ui/AdminPage';
 import MessagingRoom from '../imports/ui/MessagingRoom';
 import AllChats from '../imports/ui/AllChats';
 import EditExpenseForm from '../imports/ui/EditExpenseForm';
+import PublicPage from '../imports/ui/publicPage';
 const history = createHistory();
 const unauthenicatedPages = ['/', '/signup'];
-const authenticatedPage = ['/home', '/addPost','/managePost', '/savedPost', "/adminPage", "/ch"];
+const authenticatedPage = ['/home', '/addPost','/managePost', '/savedPost', "/adminPage", "/allChats","/chat","/EditExpenseForm"];
 
 //switch moves through route definitions in order till it finds a match so anything that
 //doesnt match it defaults to the bottom router
@@ -29,8 +30,8 @@ const authenticatedPage = ['/home', '/addPost','/managePost', '/savedPost', "/ad
 const routes = (
   <Router history={history}>
         <Switch>
-            <Route path="/" component={Login} exact={true} />
-            <Route path="/signup" component={Signup}  />
+            <Route path="/" component={PublicPage} exact={true} />
+            <Route path="/signup" component={Login}  />
             <Route path="/home" component={Home} />
             <Route path="/addPost" component={AddPost} />
             <Route path="/managePost" component={ManagePost} />
