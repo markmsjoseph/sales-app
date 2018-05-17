@@ -1,7 +1,7 @@
 import React from 'react';
 import { Meteor } from 'meteor/meteor';
 import {Images} from '../api/images';
-
+import Modal from 'react-modal';
 // let holder = document.getElementById("charsLeft");
 // let commentsInput = document.getElementById("postDes");
 // function updateRemainingCharacters() {
@@ -25,7 +25,8 @@ export default class AddPostForm extends React.Component {
       nameCharacterCount:0,
       countError:"",
       nameError:"",
-      numberError:''
+      numberError:'',
+        isOpen:false
     };
   }
 
@@ -97,7 +98,7 @@ export default class AddPostForm extends React.Component {
     //     })
     // }
 
-
+    console.log("UPDATED()(()())(()()()()))()()())");
   }
 
 
@@ -170,7 +171,19 @@ numberCharacters(e){
                             <label className ="addPostForm__label">Enter URL for post image</label>
                             <input id= "myFile" className = 'form-control form-control-lg' type="text" ref="imageRef"  placeholder= "Upload Image"/><br/>
 
-                            <button className='addPost__form__Submit'>Add Post </button>
+                            <button className='addPost__form__Submit' onClick={()=>this.setState({isOpen:true})}>Add Post </button>
+
+
+
+
+                            <Modal isOpen = {this.state.isOpen} contentLabel="Add Post">
+                                  <p>Once you add a post, it will not show up in the list of all post immediately. It needs to be approved by the admin first. </p>
+
+
+                                <button onClick={()=>this.setState({isOpen:false})}>Ok</button>
+                            </Modal>
+
+
                       </form>
 
       </div>

@@ -37,8 +37,11 @@ export default class AllPost extends React.Component {
 
     renderPostListItems(){
       return this.state.post.map((post)=>{
+
         return <PublicPostListItem key={post._id}   {...post} />;
-      })
+
+
+      });
     }
 
     onSortByDesc(){
@@ -75,20 +78,40 @@ export default class AllPost extends React.Component {
     render() {
       return (
         <div>
-          <div  className=" wrapper wrapper-top-search wrapper_search-and-filter">
-                <div className="wrapper_sort-buttons">
-                      <button className=" sort_button " onClick={this.onSortByDesc.bind(this)}>Sort by Price Asc(Largest to Smallest)</button>
-                      <button className=" sort_button " onClick={this.onSortByAsec.bind(this)}>Sort by Price Desc(Smallest to Largest)</button>
-                </div>
-                <div className="wrapper_search">
+          <div class="container-fluid noPadding">
+                      <div className = "wrapper wrapper-top-search wrapper_search-and-filter">
+                                      <div class="row text-center  ">
+                                              <div class="col-xs-12 col-sm-12 col-md-4 centerColumn ">
+                                                  <input className = ' search-form form-control form-control-lg ' type="text" placeholder="SEARCH" onChange={this.handleSearch.bind(this)}/><br/>
+                                              </div>
+                                      </div>
 
-                      <input className = ' search-form form-control form-control-lg ' type="text" placeholder="SEARCH" onChange={this.handleSearch.bind(this)}/><br/>
-                </div>
-                </div>
+                                      <div class="row ">
+                                          <div class="col-xs-12 col-sm-12 col-md-12 rightAlign">
+                                              <button className=" sort_button " onClick={this.onSortByDesc.bind(this)}>Sort by Price Asc(Largest to Smallest)</button>
+                                          </div>
+                                          <div class="col-xs-12 col-sm-12 col-md-12 rightAlign">
+                                              <button className=" sort_button " onClick={this.onSortByAsec.bind(this)}>Sort by Price Desc(Smallest to Largest)</button>
+                                          </div>
+                                    </div>
+                        </div>
+
+          </div>
+
+
+
+
+
+
             <div className = "wrapper">
+              <div class="container-fluid">
+  <div class="row">
                   <FlipMove>
+
                     {this.renderPostListItems()}
                   </FlipMove>
+                </div>
+              </div>
             </div>
           </div>
       );

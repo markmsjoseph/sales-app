@@ -7,6 +7,17 @@
 html{
   font-size: 62.5%;
 }
+.centerColumn{
+  float: none;
+   margin: 0 auto;
+}
+.noPadding{
+  padding:0px !important;
+}
+
+.rightAlign{
+  text-align: right;
+}
 
 body{
   color:#555555;
