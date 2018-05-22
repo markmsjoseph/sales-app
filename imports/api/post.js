@@ -145,7 +145,7 @@ Meteor.methods({
           throw new Meteor.Error('not authorized');
         }
 
-        if(userId=="GaocWtwD2rhGXfLM9"){
+        if(userId=="bpe7Kafu9xq3DFR2g"){
           throw new Meteor.Error('Cannot Delete Admin');
         }
         //used to delete specific user

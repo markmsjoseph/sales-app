@@ -35,7 +35,7 @@ export default class AdminPage extends React.Component {
           this.props.history.push('/');
         }
 
-        if(!(Meteor.userId() == "HxL6yB4jb5Td5zEef")){
+        if(!(Meteor.userId() == "bpe7Kafu9xq3DFR2g")){
           console.log("NOT AN ADMIN, redirecting to /");
           this.props.history.push('/home');
         }
