@@ -1,7 +1,7 @@
 
 .addPostForm__label{
   font-size: 24px;
-color: #3a06a1;
+color:$mediumBlue;
 padding-top: 20px;
 }
 
@@ -15,7 +15,7 @@ padding-top: 20px;
 }
 
 .addPost__form__Submit{
-  background-color: #3a06a1;
+  background-color: $darkBlue;
       border: none;
       color: white;
       padding: 15px 32px;
@@ -25,11 +25,11 @@ padding-top: 20px;
       font-size: 16px;
       margin: 10px;
       border-radius: 10px;
-      border: 3px solid orange;
+      border: 3px solid $darkBlue;
 }
 
 .addPost__form__Submit:hover{
-  color:#29038b;
-  border: 3px solid orange;
+  color:$mediumBlue;
+  border: 3px solid $mediumBlue;
   background-color: white;
 }

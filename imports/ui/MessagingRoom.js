@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import ChatComponent from './ChatComponent';
 import {Chat} from '../api/chat';
 import PrivateHeader from './PrivateHeader';
+// import {Session} from 'meteor/session';
 
 
 //USER CLICKS MESSAGE BUTTON -> TAKEN TO ONE ON ONE PAGE WITH PERSON WHERE TEHEY CAN MESSAGE
@@ -21,6 +22,11 @@ export default class MessagingRoom extends React.Component {
       messages:[]
     };
   }
+
+  // componentWillMount() {
+  // Session.set('currentPagePrivacy', this.props.priavteOrPublic);//set session id
+  //
+  // }
 
   //needs to display all msges, may need session to constantly update
     displayMessages(){

@@ -17,7 +17,7 @@ $lightPurple:#c2b6f3;
 }
 
 .chatHeader{
-  color: orange;
+  color: $darkBlue;
 font-size: 30px;
 font-weight: 700;
 margin: 20px;
@@ -31,7 +31,7 @@ margin: 10px;
 
 }
 .sendChatMessage{
-  background-color: #3a06a1;
+  background-color: $mediumBlue;
       border: none;
       color: white;
       padding: 15px 32px;
@@ -41,11 +41,11 @@ margin: 10px;
       font-size: 16px;
       margin: 10px;
       border-radius: 10px;
-    border: 3px solid white;
+    border: 3px solid $mediumBlue;
 }
 .sendChatMessage:hover{
-  color:#29038b;
-  border: 3px solid orange;
+  color:$mediumBlue;
+  border: 3px solid $mediumBlue;
   background-color: white;
 }
 
@@ -61,11 +61,11 @@ margin: 10px;
 margin-left: 20px;
 font-size: 20px;
 font-weight: 500;
-color:$purple;
+color:$darkBlue;
 }
 .chatBox{
   margin: 10px;
-  border: 1px solid #9f8bbd;
+  border: 1px solid $darkBlue;
   background-color: #f7f7f7;
   display: block;
       border-radius: 5px;

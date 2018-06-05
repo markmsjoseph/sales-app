@@ -11,7 +11,7 @@ import FlipMove from 'react-flip-move';
 import Modal from 'react-modal';
 //everytime the session value changes, it will cause tracker autorun to run again thus enabling us to re render stuff, without
 //sessions trackers autorun will not do this rerendering
-import {Session} from 'meteor/session';
+// import {Session} from 'meteor/session';
 
 export default class AdminPage extends React.Component {
 
@@ -30,6 +30,8 @@ export default class AdminPage extends React.Component {
 
 
     componentWillMount() {
+      //set the global session variable currentPagePrivacy to the value that was passed in as props from the route component in main.js
+      // Session.set('currentPagePrivacy', this.props.priavteOrPublic);//set session id
         if(!Meteor.userId()) {
           console.log("No user but trying to go back: In ComponentDidMount from Link.js");
           this.props.history.push('/');

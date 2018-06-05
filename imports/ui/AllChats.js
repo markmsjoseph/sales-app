@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import {Chat} from '../api/chat';
 import Modal from 'react-modal';
 import PrivateHeader from './PrivateHeader';
+// import {Session} from 'meteor/session';
 
 //Pull from database all chats where either sender or reciever match id
 export default class AllChats extends React.Component {
@@ -18,6 +19,12 @@ export default class AllChats extends React.Component {
       currentChatIDName:""
     };
   }
+
+  // componentWillMount() {
+  //   //set the global session variable currentPagePrivacy to the value that was passed in as props from the route component in main.js
+  //   Session.set('currentPagePrivacy', this.props.priavteOrPublic);//set session id
+  //
+  // }
 
 
   //find all chats where you, the current user is either the sender and reciever

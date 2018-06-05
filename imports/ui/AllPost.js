@@ -4,7 +4,7 @@ import {Tracker} from 'meteor/tracker';
 import { Meteor } from 'meteor/meteor';
 import PostListItem from './PostListItem';
 import FlipMove from 'react-flip-move';
-
+import {Session} from 'meteor/session';
 
 export default class AllPost extends React.Component {
 
@@ -28,6 +28,11 @@ export default class AllPost extends React.Component {
 
     }
 
+    // componentWillMount() {
+    //   //set the global session variable currentPagePrivacy to the value that was passed in as props from the route component in main.js
+    //   Session.set('currentPagePrivacy', this.props.priavteOrPublic);//set session id
+    //
+    // }
     //fires right before component is removed from screen
     componentWillUnmount() {
       // console.log("Component Unmount fires PostList");
@@ -82,16 +87,16 @@ export default class AllPost extends React.Component {
     render() {
       return (
         <div>
-          <div class="container-fluid noPadding">
+          <div className="container-fluid noPadding">
                       <div className = "wrapper wrapper-top-search wrapper_search-and-filter">
-                                      <div class="row text-center  ">
-                                              <div class="col-xs-12 col-sm-12 col-md-4 centerColumn ">
+                                      <div className="row text-center  ">
+                                              <div className="col-xs-12 col-sm-12 col-md-4 centerColumn ">
                                                   <input className = ' search-form form-control form-control-lg ' type="text" placeholder="SEARCH" onChange={this.handleSearch.bind(this)}/><br/>
                                               </div>
                                       </div>
 
-                                      <div class="row ">
-                                          <div class="col-xs-12 col-sm-12 col-md-12 rightAlign">
+                                      <div className="row ">
+                                          <div className="col-xs-12 col-sm-12 col-md-12 rightAlign">
                                               <button className=" sort_button " onClick={this.onSortByDesc.bind(this)}>Sort by Price Asc(Largest to Smallest)</button>
                                           </div>
                                           <div class="col-xs-12 col-sm-12 col-md-12 rightAlign">
@@ -108,8 +113,8 @@ export default class AllPost extends React.Component {
 
 
             <div className = "wrapper">
-              <div class="container-fluid">
-  <div class="row">
+              <div className="container-fluid">
+  <div className="row">
                   <FlipMove>
 
                     {this.renderPostListItems()}

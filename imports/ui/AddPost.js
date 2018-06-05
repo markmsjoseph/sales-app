@@ -1,5 +1,5 @@
 import React from 'react';
-
+// import {Session} from 'meteor/session';
 
 import { Link } from 'react-router-dom';
 import {Post} from '../api/post';
@@ -9,6 +9,7 @@ import AddPostForm from './AddPostForm';
 export default class AddPost extends React.Component {
 
     componentWillMount() {
+      // Session.set('currentPagePrivacy', this.props.priavteOrPublic);//set session id
         if(!Meteor.userId()) {
           console.log("No user but trying to go back: In ComponentDidMount from Link.js");
           this.props.history.push('/');
@@ -29,7 +30,7 @@ export default class AddPost extends React.Component {
               <div className="wrapper">
                   <AddPostForm/>
               </div>
-              
+
         </div>
       );
     }

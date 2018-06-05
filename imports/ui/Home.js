@@ -1,14 +1,10 @@
 import React from 'react';
+
 // import { Accounts } from 'meteor/accounts-base';
 import { Link } from 'react-router-dom';
 import AllPost from './AllPost';
 // import AllChats from './AllChats';
 import PrivateHeader from './PrivateHeader';
-
-
-
-
-
 
 export default class Home extends React.Component {
 

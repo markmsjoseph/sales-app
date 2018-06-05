@@ -3,7 +3,7 @@ import {Post} from '../api/post';
 import {Tracker} from 'meteor/tracker';
 import { Meteor } from 'meteor/meteor';
 import { Link } from 'react-router-dom';
-import {Session} from 'meteor/session';
+// import {Session} from 'meteor/session';
 
 
 export default class EditPost extends React.Component {
@@ -22,7 +22,11 @@ export default class EditPost extends React.Component {
     this.onNameChange = this.onNameChange.bind(this);
     // this.onNameChange = this.onNameChange.bind(this);
   }
-
+  // 
+  // componentWillMount() {
+  // Session.set('currentPagePrivacy', this.props.priavteOrPublic);//set session id
+  //
+  // }
 
 
   onNameChange(e){

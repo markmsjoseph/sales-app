@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import LoginHeader from './LoginHeader';
+// import {Session} from 'meteor/session';
 // IN ORDER TO VERIFY EMAILS ETC, WE NEED AN SMTP ACCOUNT. THIS STEP WAS SKIPPED but
 // THIS URL HAS DATA ON IT https://themeteorchef.com/tutorials/sign-up-with-email-verification AND
 //https://docs.meteor.com/api/passwords.html#Accounts-verifyEmail
@@ -17,6 +18,7 @@ export default class Login extends React.Component {
     }
 
     componentWillMount() {
+        // Session.set('currentPagePrivacy', this.props.priavteOrPublic);//set session id
        if (Meteor.userId()){
          console.log("Has user but trying to go to authenticated page: In ComponentDidMount from Login.js");
              this.props.history.push('/home');

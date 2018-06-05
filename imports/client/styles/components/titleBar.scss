@@ -2,7 +2,7 @@
 .title-bar{
   font-size: 45px;
       text-align: center;
-      color: orange;
+      color: white;
       font-family: sans-serif;
       font-weight: 600;
 
@@ -13,4 +13,12 @@
       color: white;
       font-family: sans-serif;
       font-weight: 500;
+}
+.logged-in-as{
+  font-size: 14px;
+  color: white;
+  padding: 4px;
+  position: absolute;
+  top: 10px;
+  background-color: $darkBlue;
 }

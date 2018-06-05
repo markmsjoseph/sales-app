@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import PrivateHeader from './PrivateHeader';
 import {Tracker} from 'meteor/tracker';
 import {Post} from '../api/post';
+// import {Session} from 'meteor/session';
 
 export default class SavedPost extends React.Component {
 
@@ -36,6 +37,7 @@ export default class SavedPost extends React.Component {
 
     //checks to make sure used is logged else redirects
     componentWillMount() {
+    // Session.set('currentPagePrivacy', this.props.priavteOrPublic);//set session id
         if(!Meteor.userId()) {
           console.log("No user but trying to go back: In ComponentDidMount from Link.js");
           this.props.history.push('/');

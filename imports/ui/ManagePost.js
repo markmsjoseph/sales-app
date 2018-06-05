@@ -3,10 +3,12 @@ import { Accounts } from 'meteor/accounts-base';
 import { Link } from 'react-router-dom';
 import EditPost from './EditPost';
 import PrivateHeader from './PrivateHeader';
+// import {Session} from 'meteor/session';
 
 export default class ManagePost extends React.Component {
 
     componentWillMount() {
+        // Session.set('currentPagePrivacy', this.props.priavteOrPublic);//set session id
         if(!Meteor.userId()) {
           console.log("No user but trying to go back: In ComponentDidMount from Link.js");
           this.props.history.push('/');

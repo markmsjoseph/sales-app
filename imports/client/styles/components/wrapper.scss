@@ -16,13 +16,13 @@
 }
 //top background color where main heading is
 .wrapper-top{
-background: -webkit-linear-gradient(top, #260387 0%,#650dd8 100%); /* Chrome10-25,Safari5.1-6 */
+background: $darkBlue; /* Chrome10-25,Safari5.1-6 */
 }
 .wrapper-top-search{
-  background: -webkit-linear-gradient(top, #640cd7 0%, #7047a7 100%);
+  background: $darkBlue;
 }
 .wrapper-top-search-filters{
-  background: -webkit-linear-gradient(top, #640cd7 0%, #7047a7 100%);
+  background: $darkBlue;
 }
 //top headings under sell your stuff ie. add post etc
 .wrapper-top-main-links{
@@ -37,7 +37,7 @@ background: -webkit-linear-gradient(top, #260387 0%,#650dd8 100%); /* Chrome10-2
    }
 
    a:hover{
-     color: orange;
+     color: white;
 
    }
 
@@ -45,7 +45,7 @@ background: -webkit-linear-gradient(top, #260387 0%,#650dd8 100%); /* Chrome10-2
 
 .wrapper_search-and-filter{
   margin: 0 auto;
-  background-color:#6da7d6;
+  background-color:$mediumBlue;
   padding: 1.3rem;
 }
 .wrapper__post{
