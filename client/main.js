@@ -39,6 +39,7 @@ const routes = (
             <Route path="/adminPage" component={AdminPage} />
               <Route path="/allChats" component={AllChats} />
             <Route path="/chat" component={MessagingRoom} />
+            <Route path="/chat/:id" exact={true} render={ (props) => <MessagingRoom priavteOrPublic= {"privateRoute"} {...props} />} />
             <Route path="/EditExpenseForm" component={EditExpenseForm} />
             <Route path="*" component={NotFound} />
         </Switch>
@@ -48,6 +49,8 @@ const routes = (
 Tracker.autorun(() => {
   const isAuthenticated = !!Meteor.userId();
   console.log("Authenticaion status: ", isAuthenticated);
+  const currentPagePrivacy = Session.get('currentPagePrivacy');
+  console.log("Current page privacy: ", currentPagePrivacy);
 
   const pathname = history.location.pathname;
   const isUnauthenticatedPage = unauthenicatedPages.includes(pathname);
@@ -59,7 +62,8 @@ Tracker.autorun(() => {
     history.push('/home');
   }
     //if not logged in but try to go to a page that needs authentication, send them to login page
-  else if (!isAuthenticated && isAuthenticatedPage) {
+    //if currentPagePrivacy is undefined, this session variable will word for chat/:id pages to log user out
+  else if (!isAuthenticated && isAuthenticatedPage || !isAuthenticated && currentPagePrivacy===undefined) {
     console.log("redirecting to /");
     history.push('/');
   }

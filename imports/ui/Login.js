@@ -76,8 +76,9 @@ export default class Login extends React.Component {
     return (
       <div>
 <Link to ="/" className = "logoutButton">Back to Home</Link>
-                <div className="vertical-center" >
-                      <div className="wrapper wrapper__box wrapper__login-box">
+                <div className="container" >
+                    <div className = "row justify-content-center">
+                      <div class="col-lg-6 col-md-6  col-sm-12 col-xs-12 ">
                             <Tabs defaultIndex={1} onSelect={index => console.log(index)}>
 
                                    <TabList>
@@ -118,7 +119,8 @@ export default class Login extends React.Component {
 
                                   </TabPanel>
                             </Tabs>
-                </div>
+                          </div>
+                          </div>
                 </div>
       </div>
   );

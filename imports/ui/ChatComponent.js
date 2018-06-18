@@ -23,7 +23,7 @@ export default class ChatComponent extends React.Component {
           // }
           this.postTracker =  Tracker.autorun(() => {
 
-
+      Session.set('currentPagePrivacy', this.props.priavteOrPublic);//set session id
 
               //we get the username to be used later. we need to call this in tracker autorun because at first, the user is null because
               //of different rendering times, when we get the user, then we set the state to the username
@@ -33,6 +33,7 @@ export default class ChatComponent extends React.Component {
                     currentChatIDName:Meteor.user().username
                   }
                 });
+                console.log("Meteor users is true");
               }
 
               //find all links which are approved. then call fetch on cursor to get all link documents back
