@@ -1,4 +1,4 @@
-# Sales App
+# Sales App - Built using react.js and meteor
 
 ## Mark Joseph 
 
