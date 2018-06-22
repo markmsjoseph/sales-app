@@ -12,6 +12,20 @@
 
 
 }
+.button-login{
+    background-color: #ff0d5f;
+border: none;
+color: white;
+cursor: pointer;
+font-size: 14px;
+line-height: 1.2;
+margin-bottom: 10px;
+padding: 11px;
+border-radius: 46px;
+width: 70%;
+text-transform: uppercase;
+}
+
 .savepost__button:hover{
   color:white;
   border: 3px solid $darkBlue;
@@ -62,15 +76,14 @@ margin: 10px;
 
 
 .logoutButton{
-    font-size: 16px;
-    border: 1px solid $mediumBlue;
-    color: white;
-    padding: 4px;
-    border-radius: 4px;
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background-color: $mediumBlue;
+  font-size: 13px;
+border: 1px solid #ffffff;
+color: white;
+padding: 4px;
+border-radius: 4px;
+position: absolute;
+top: 10px;
+right: 10px;
 
 }
 .logoutButton:hover{

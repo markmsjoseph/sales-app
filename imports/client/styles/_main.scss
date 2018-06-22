@@ -1,6 +1,7 @@
 /* CSS declarations go here */
 @import './variables';
 @import './base';
+@import './mixins';
 @import './components/buttons';
 @import './components/titleBar';
 @import './components/wrapper';
@@ -11,5 +12,6 @@
 @import './components/addpost/form';
 @import './components/adminPage/radioButtons';
 @import './components/chats/chatMessage';
+@import './components/login/animations';
 @import './components/login/login';
 @import './components/modals/modal';
