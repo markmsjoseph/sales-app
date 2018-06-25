@@ -4,6 +4,13 @@
   margin: 0 auto;
   padding: 1.3rem;
   text-align:center;
+
+}
+.wrapperAll{
+  margin: 0 auto;
+  padding: 1.3rem;
+  text-align:center;
+background: -webkit-linear-gradient(top, rgba(79,50,130,1) 0%,rgba(127,63,152,1) 100%); /* Chrome10-25,Safari5.1-6 */
 }
 
 .wrapper__form{
@@ -16,6 +23,9 @@
 }
 //top background color where main heading is
 .wrapper-top{
+  position: sticky;
+top: 0;
+    z-index: 1;
 background: $darkBlue; /* Chrome10-25,Safari5.1-6 */
 }
 .wrapper-top-search{
@@ -50,11 +60,12 @@ background: $darkBlue; /* Chrome10-25,Safari5.1-6 */
 }
 .wrapper__post{
     display: inline-block;
-     transition: all .2s ease-in-out;
+
 }
 
 .wrapper__post:hover{
     transform: scale(1.1);
+     transition: all 300ms ease-in ;
 }
 
 .wrapper__box{

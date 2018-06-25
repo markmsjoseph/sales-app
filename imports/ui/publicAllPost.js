@@ -4,6 +4,8 @@ import {Tracker} from 'meteor/tracker';
 import { Meteor } from 'meteor/meteor';
 import PublicPostListItem from './publicPostListItem';
 import FlipMove from 'react-flip-move';
+import PublicHeader from './publicHeader';
+
 
 
 export default class AllPost extends React.Component {
@@ -37,8 +39,7 @@ export default class AllPost extends React.Component {
 
     renderPostListItems(){
       return this.state.post.map((post)=>{
-
-        return <PublicPostListItem key={post._id}   {...post} />;
+        return <div className = "wrapper wrapper__post" key={post._id} ><PublicPostListItem   {...post} /></div>;
 
 
       });
@@ -78,13 +79,19 @@ export default class AllPost extends React.Component {
     render() {
       return (
         <div>
-          <div class="container-fluid noPadding">
-                      <div className = "wrapper wrapper-top-search wrapper_search-and-filter">
-                                      <div class="row text-center  ">
-                                              <div class="col-xs-12 col-sm-12 col-md-4 centerColumn ">
-                                                  <input className = ' search-form form-control form-control-lg ' type="text" placeholder="SEARCH" onChange={this.handleSearch.bind(this)}/><br/>
-                                              </div>
-                                      </div>
+          <div className = "wrapper wrapper-top">
+                <PublicHeader  title="Sell Your Stuff" subtitle="Users must Login to sell/chat" />
+                <div class="container-fluid noPadding">
+
+
+
+                  <nav className="navbar navbar-expand-md navbar-dark justify-content-center noMargin">
+                          <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                            <span className="navbar-toggler-icon"></span>
+                          </button>
+
+                          <div className="collapse navbar-collapse" id="collapsibleNavbar">
+                                    <ul className="navbar-nav">
 
                                       <div class="row ">
                                           <div class="col-xs-12 col-sm-12 col-md-12 rightAlign">
@@ -94,8 +101,21 @@ export default class AllPost extends React.Component {
                                               <button className=" sort_button " onClick={this.onSortByAsec.bind(this)}>Sort by Price Desc(Smallest to Largest)</button>
                                           </div>
                                     </div>
-                        </div>
 
+                                    </ul>
+                          </div>
+                </nav>
+
+
+                    <div class="row justify-content-center">
+
+                                <input id="myInput" className = ' search-form form-control form-control-lg ' type="text" placeholder="SEARCH" onChange={this.handleSearch.bind(this)}/><br/>
+
+                    </div>
+
+
+
+                </div>
           </div>
 
 
@@ -103,9 +123,10 @@ export default class AllPost extends React.Component {
 
 
 
-            <div className = "wrapper">
+
+            <div className = "wrapperAll">
               <div class="container-fluid">
-  <div class="row">
+                  <div class="row">
                   <FlipMove>
 
                     {this.renderPostListItems()}

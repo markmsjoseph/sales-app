@@ -2,7 +2,7 @@ import React from 'react';
 // import { Accounts } from 'meteor/accounts-base';
 // import {Session} from 'meteor/session';
 import AllPost from './AllPost';
-import PublicHeader from './publicHeader';
+
 import PublicAllPost from './publicAllPost';
 
 export default class Home extends React.Component {
@@ -22,13 +22,6 @@ export default class Home extends React.Component {
     render() {
       return (
           <div>
-                  <div className = "wrapper wrapper-top">
-                        <PublicHeader  title="Sell Your Stuff" subtitle="Users must Register/Login to chat/add post" />
-                        <div className="wrapper-top-main-links">
-
-                        </div>
-
-                  </div>
                     <PublicAllPost />
           </div>
       );
