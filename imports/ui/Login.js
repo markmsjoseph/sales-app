@@ -104,12 +104,12 @@ export default class Login extends React.Component {
                                           <form onSubmit={this.onSubmitHandler.bind(this)} noValidate>
                                               <div className="row justify-content-center">
                                                   <i className="glyphicon glyphicon-user "></i>
-                                              <input  id="myInput" className = ' inputLoginFormStyles form-control form-control-lg' type="email" name="email" ref = "myEmail" placeholder = "email"/>
+                                              <input  id="myInputLogin" className = ' inputLoginFormStyles form-control form-control-lg' type="email" name="email" ref = "myEmail" placeholder = "email"/>
                                             </div>
                                               <br></br>
                                                 <div className="row justify-content-center">
                                                     <i className="glyphicon glyphicon-lock "></i>
-                                                  <input id="myInput" className = ' inputLoginFormStyles form-control form-control-lg' type="password" name="password" ref = "myPassword" placeholder= "password"/>
+                                                  <input id="myInputLogin" className = ' inputLoginFormStyles form-control form-control-lg' type="password" name="password" ref = "myPassword" placeholder= "password"/>
                                                 </div><br></br>
                                               <button className='button-login'> Login</button>
                                           </form>
@@ -129,20 +129,20 @@ export default class Login extends React.Component {
                                             <div className=" row justify-content-center">
 
                                               <i className="glyphicon glyphicon-user "></i>
-                                              <input id="myInput" className = 'inputLoginFormStyles form-control form-control-lg' type="text" name="userName" ref = "userName" placeholder = "User Name"/>
+                                              <input id="myInputLogin" className = 'inputLoginFormStyles form-control form-control-lg' type="text" name="userName" ref = "userName" placeholder = "User Name"/>
 
                                             </div><br></br>
 
                                             <div className="  row justify-content-center">
                                                 <i className="glyphicon glyphicon-envelope "></i>
-                                              <input id="myInput" className = 'inputLoginFormStyles form-control form-control-lg' type="email" name="email" ref = "myEmail" placeholder = "Email"/>
+                                              <input id="myInputLogin" className = 'inputLoginFormStyles form-control form-control-lg' type="email" name="email" ref = "myEmail" placeholder = "Email"/>
 
                                          </div>
                                            <br></br>
 
                                            <div className=" row justify-content-center">
                                                 <i className="glyphicon glyphicon-lock "></i>
-                                             <input id="myInput" className = 'inputLoginFormStyles form-control form-control-lg' type="password" name="password" ref = "myPassword" placeholder= "Password"/>
+                                             <input id="myInputLogin" className = 'inputLoginFormStyles form-control form-control-lg' type="password" name="password" ref = "myPassword" placeholder= "Password"/>
 
                                          </div>
                                            <br></br>

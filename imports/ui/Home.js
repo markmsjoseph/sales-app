@@ -61,7 +61,7 @@ export default class Home extends React.Component {
       return (
         <div>
         <div className = "wrapper wrapper-top">
-                    <PrivateHeader  title="Sell Your Stuff" shortDes="users should be able to see all post on this page. Post will contain a image, price and short description. Each post will a link to more details about it. EVERYONE CAN SEE EVERYTHING ON THIS PAGE " />
+                    <PrivateHeader  title="Sell Your Stuff"  />
                     <p className = "logged-in-as">Logged in as:{this.state.username} </p>
 
                     <div className="wrapper-top-main-links">

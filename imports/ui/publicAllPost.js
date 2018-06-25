@@ -39,7 +39,7 @@ export default class AllPost extends React.Component {
 
     renderPostListItems(){
       return this.state.post.map((post)=>{
-        return <div className = "wrapper wrapper__post" key={post._id} ><PublicPostListItem   {...post} /></div>;
+        return <div className = " wrapper wrapper__post" key={post._id} ><PublicPostListItem   {...post} /></div>;
 
 
       });
@@ -93,13 +93,13 @@ export default class AllPost extends React.Component {
                           <div className="collapse navbar-collapse" id="collapsibleNavbar">
                                     <ul className="navbar-nav">
 
-                                      <div class="row ">
-                                          <div class="col-xs-12 col-sm-12 col-md-12 rightAlign">
+                                      <div class="row justify-content-center">
+
                                               <button className=" sort_button " onClick={this.onSortByDesc.bind(this)}>Sort by Price Asc(Largest to Smallest)</button>
                                           </div>
-                                          <div class="col-xs-12 col-sm-12 col-md-12 rightAlign">
-                                              <button className=" sort_button " onClick={this.onSortByAsec.bind(this)}>Sort by Price Desc(Smallest to Largest)</button>
-                                          </div>
+                                        <div class="row justify-content-center">
+                                              <button className=" sort_button2 " onClick={this.onSortByAsec.bind(this)}>Sort by Price Desc(Smallest to Largest)</button>
+
                                     </div>
 
                                     </ul>

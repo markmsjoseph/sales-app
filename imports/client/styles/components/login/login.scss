@@ -7,7 +7,8 @@
   height: 100vh;
   width: 100vw;
 
-  background: -webkit-linear-gradient(  rgba(175, 80, 181, 0.79) 0%, rgba(0, 11, 53, 0.93) 100%), url(images/image1.jpg);
+  background: -webkit-linear-gradient(rgba(56, 31, 195, 0.79) 0%, rgba(91, 28, 111, 0.81) 100%), url(images/image1.jpg);
+
   background-size: cover;
   background-repeat: no-repeat;
   @include smallestPhoneSizes{
@@ -95,17 +96,69 @@ padding-bottom: 28px;
 }
 
 
+#myInputLogin		{
+  color:white;
+  width: 65%;
+  -webkit-transition:width 0.3s ease-in-out;
+    margin-bottom: 23px;
+
+}
+#myInputLogin:focus	{
+  box-shadow: none;
+  color:white;
+  width:80%;
+  -webkit-transition:width 0.5s ease-in-out;
+    margin-bottom: 23px;
+}
+
 #myInput		{
   color:white;
   width: 65%;
   -webkit-transition:width 0.3s ease-in-out;
+      margin-bottom: 40px;
+  @include smallestPhoneSizes{
+
+  }
+
+  @include mediumSizedPhones{
+
+  }
+
+  @include tablets{
+
+  }
+
+
+  @include desktopView{
+      width:30%;
+  }
+
 }
 #myInput:focus	{
   box-shadow: none;
   color:white;
   width:80%;
   -webkit-transition:width 0.5s ease-in-out;
+      margin-bottom: 40px;
+  @include smallestPhoneSizes{
+
+  }
+
+  @include mediumSizedPhones{
+
+  }
+
+  @include tablets{
+
+  }
+
+
+  @include desktopView{
+      width:40%;
+  }
 }
+
+
 
 @-webkit-keyframes autofill {
     to {

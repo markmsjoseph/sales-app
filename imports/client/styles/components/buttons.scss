@@ -72,7 +72,61 @@ margin: 10px;
       background-color: $darkBlue;
       color: #ffffff;
       margin: 5px;
+          border: solid 2px #ffffff6e;
+
+    @include smallestPhoneSizes{
+
+    }
+
+    @include mediumSizedPhones{
+
+    }
+
+    @include tablets{
+
+    }
+
+
+    @include desktopView{
+      position: absolute;
+    right: 0;
+    top: 0%;
+    }
 }
+.sort_button2{
+      font-size: 14px;
+      border: 1px solid $darkBlue;
+      color: black;
+      padding: 3px;
+      border-radius: 4px;
+      background-color: $darkBlue;
+      color: #ffffff;
+      margin: 5px;
+          border: solid 2px #ffffff6e;
+
+      @include smallestPhoneSizes{
+
+      }
+
+      @include mediumSizedPhones{
+
+      }
+
+      @include tablets{
+
+      }
+
+
+      @include desktopView{
+        position: absolute;
+        right: 0;
+        top: 80%;
+      }
+}
+
+
+
+
 
 
 .logoutButton{
