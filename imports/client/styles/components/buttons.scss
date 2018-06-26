@@ -1,16 +1,14 @@
 .savepost__button{
-      background-color: $mediumBlue;
-      border: none;
-      color: $lightBlue;
-      padding: 15px 32px;
-      text-align: center;
-      text-decoration: none;
-      display: inline-block;
-      font-size: 16px;
-      margin: 10px;
-      border: 3px solid white;
-
-
+  background-color: #231d60;
+border: none;
+color: #ffffff;
+padding: 15px 32px;
+text-align: center;
+text-decoration: none;
+display: inline-block;
+font-size: 16px;
+margin: 10px;
+border: 3px solid #ffffff82;
 }
 .button-login{
     background-color: #ff0d5f;
@@ -32,17 +30,16 @@ text-transform: uppercase;
 }
 
 .goToChat__button{
-    background-color: $darkBlue;
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 10px;
-    border: 3px solid $darkBlue;
-
+  background-color: #372ab0;
+border: none;
+color: #ffffff;
+padding: 15px 32px;
+text-align: center;
+text-decoration: none;
+display: inline-block;
+font-size: 16px;
+margin: 10px;
+border: 3px solid #ffffff82;
 
 }
 .goToChat__button:hover{
