@@ -1,7 +1,6 @@
 $purple:$darkBlue;
 .ReactModal__Content.ReactModal__Content--after-open{
-  height:300px;
-  width:600px;
+
   color:red;
   text-align:center;
   color: white;
@@ -34,12 +33,12 @@ $purple:$darkBlue;
 
 .ReactModal__Content {
   position: fixed !important;
-   top: 50%!important;
+    top: 77% !important;
    left: 50%!important;
-   margin-top: -50px!important;
-   margin-left: -300px!important;
+   // margin-top: -50px!important;
+   // margin-left: -300px!important;
   border: 10px solid rgb(255, 164, 1);
-  background: $mediumBlue !important;
+    background: #51228e !important;
   overflow: auto;
   border-radius: 15px;
   outline: none;

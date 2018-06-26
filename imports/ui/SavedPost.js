@@ -101,7 +101,7 @@ export default class SavedPost extends React.Component {
 
     render() {
       return (
-        <div >
+        <div className="allWrapper">
                               <div className = "wrapper wrapper-top">
                                       <PrivateHeader title="Sell Your Stuff" subtitle="Saved Post" />
 
