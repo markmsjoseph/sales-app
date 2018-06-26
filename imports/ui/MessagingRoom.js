@@ -41,33 +41,28 @@ export default class MessagingRoom extends React.Component {
 
     render() {
       return (
-        <div>
+        <div className="allWrapper">
 
-          <div className = "wrapper wrapper-top">
-                <PrivateHeader title="Sell Your Stuff" subtitle="Chat Room" />
+              <div className = "wrapper wrapper-top">
+                      <PrivateHeader subtitle="Chat Room" />
 
+                      <nav className="navbar navbar-expand-md navbar-dark justify-content-center noMargin">
+                              <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                                <span className="navbar-toggler-icon"></span>
+                              </button>
 
-                <nav className="navbar navbar-expand-md navbar-dark justify-content-center noMargin">
-                        <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-                          <span className="navbar-toggler-icon"></span>
-                        </button>
+                              <div className="collapse navbar-collapse" id="collapsibleNavbar">
+                                        <ul className="navbar-nav">
 
-                        <div className="collapse navbar-collapse" id="collapsibleNavbar">
-                                  <ul className="navbar-nav">
-
-                                    <div className="back_to_all_post">
-                                          <Link to ="/home">All Post</Link>
-                                            <Link to ="/allChats">All Chats</Link>
-                                    </div>
-
-                                  </ul>
-                        </div>
-              </nav>
+                                          <div className="back_to_all_post">
+                                                <Link to ="/home">All Post</Link>
+                                                  <Link to ="/allChats">All Chats</Link>
+                                          </div>
+                                        </ul>
+                              </div>
+                    </nav>
               </div>
 
-
-
-          <h1 className = "chatHeader">ChatRoom </h1>
           <ChatComponent props={this.props}/>
           {this.displayMessages()}
         </div>

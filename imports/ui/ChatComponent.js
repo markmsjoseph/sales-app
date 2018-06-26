@@ -183,15 +183,26 @@ export default class ChatComponent extends React.Component {
   render() {
     // console.log("rendering time");
     return (
-      <div >
-        <form onSubmit={this.onSubmit.bind(this)}>
-              <input className=" chatInputBox " type="text" ref="senderMsg" placeholder="Enter Message"/>
-              <button className = "sendChatMessage">Send Message </button>
-        </form>
+      
 
-        {this.renderMessages()}
+      <div className = "myCLassMEssages">
+        <div className="container-fluid item-messagingWrapper">
+            <div className="row item-sendMessageForm justify-content-center">
+                      <form className = "" onSubmit={this.onSubmit.bind(this)}>
+                            <input className=" chatInputBox " type="text" ref="senderMsg" placeholder="Enter Message"/>
+                            <button className = "sendChatMessage">Send Message </button>
+                      </form>
+              </div>
+        </div>
+            <div id = "myID" className="container-fluid item-messagingWrapperForMEssages">
 
-      </div>
+                  {this.renderMessages()}
+
+            </div>
+
+
+
+      </div>//end main div
     );
   }
 

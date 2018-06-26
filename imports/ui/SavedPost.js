@@ -103,7 +103,7 @@ export default class SavedPost extends React.Component {
       return (
         <div className="allWrapper">
                               <div className = "wrapper wrapper-top">
-                                      <PrivateHeader title="Sell Your Stuff" subtitle="Saved Post" />
+                                      <PrivateHeader subtitle="Saved Post" />
 
                                           <nav className="navbar navbar-expand-md navbar-dark justify-content-center noMargin">
                                                   <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">

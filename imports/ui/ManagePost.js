@@ -20,7 +20,7 @@ export default class ManagePost extends React.Component {
       return (
           <div className="allWrapper">
           <div className = "wrapper wrapper-top">
-                <PrivateHeader title="Sell Your Stuff" subtitle="Edit or Delete Post" />
+                <PrivateHeader  subtitle="Edit or Delete Post" />
                 <nav className="navbar navbar-expand-md navbar-dark justify-content-center noMargin">
                         <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
                           <span className="navbar-toggler-icon"></span>

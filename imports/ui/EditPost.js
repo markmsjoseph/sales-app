@@ -104,6 +104,7 @@ export default class EditPost extends React.Component {
 
   renderPostListItems(){
     console.log("IN EDITPOST");
+      const customStyles = {content : {  top: '50%',  left: '50%',right: 'auto',bottom : 'auto',marginRight : '-50%',  transform : 'translate(-50%, -50%)'}};
        // <Link to ={`/EditExpenseForm/${post._id}` id={post._id} }>Update Post</Link>
     return this.state.post.map((post)=>{
       return (
@@ -118,7 +119,7 @@ export default class EditPost extends React.Component {
 
                          <button className='removePost__form__Submit' onClick={()=>this.setState({isOpen:true})}>Delete Post</button>
 
-                       <Modal isOpen = {this.state.isOpen} contentLabel="Remove post">
+                       <Modal style={customStyles} isOpen = {this.state.isOpen} contentLabel="Remove post">
                                 <p>Are you sure you want to delete this Post? </p>
                                 <button onClick={this.deleteChat.bind(this,post._id)}>Delete Post </button>
                                 <button onClick={()=>this.setState({isOpen:false})}>Cancel Delete Post</button>

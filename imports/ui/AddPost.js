@@ -21,7 +21,7 @@ export default class AddPost extends React.Component {
       return (
         <div>
               <div className = "wrapper wrapper-top">
-                    <PrivateHeader title="Sell Your Stuff" subtitle="Add New Post" />
+                    <PrivateHeader subtitle="Add New Post" />
 
                       <nav className="navbar navbar-expand-md navbar-dark justify-content-center noMargin">
                               <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
