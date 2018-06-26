@@ -110,13 +110,13 @@ export default class EditPost extends React.Component {
         <div className = "wrapper wrapper__post">
                 <div className="item item__post-title">
                       <p key={post._id}>{post.name} </p>
-                       <p>Posted by:{post.userId}</p>
-                       <p>Price:{post.price}</p>
-                       <p>{post.description}</p>
+                       <p className='item__post-postedBy'>Posted by:{post.userId}</p>
+                       <p className='item__post-price'>Price:{post.price}</p>
+                       <p  className='item__post-description'>{post.description}</p>
                        <img className ='item__image' src={post.image}/><br/><br/>
 
 
-                         <button className='addPost__form__Submit' onClick={()=>this.setState({isOpen:true})}>Delete Post</button>
+                         <button className='removePost__form__Submit' onClick={()=>this.setState({isOpen:true})}>Delete Post</button>
 
                        <Modal isOpen = {this.state.isOpen} contentLabel="Remove post">
                                 <p>Are you sure you want to delete this Post? </p>
@@ -135,7 +135,6 @@ export default class EditPost extends React.Component {
   render() {
     return (
       <div>
-        <h2> Your Current Post </h2>
         {this.renderPostListItems()}
 
       </div>

@@ -33,6 +33,34 @@ h1{
     float: none;
     margin: 0 auto;
 }
+.navbar-collapse {
+    padding-right: 15px;
+    padding-left: 15px;
+    overflow-x: visible;
+    -webkit-overflow-scrolling: touch;
+    border-top: 11px solid transparent;
+    -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, .1);
+    box-shadow: none;
+    background: #382bb1;
+    margin-top: 11px;
+    @include smallestPhoneSizes{
+    font-size: 14px;
+    }
+
+    @include mediumSizedPhones{
+  font-size: 14px;
+    }
+
+    @include tablets{
+  font-size: 14px;
+    }
+
+
+    @include desktopView{
+  background: none;
+    }
+
+}
 
 .allWrapper{
   position: absolute;

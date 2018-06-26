@@ -4,13 +4,37 @@
   /* margin-bottom: 1.3rem; */
   color: #d2d2d2;
         background-color: #241d73;
+        transition: all .2s ease-in-out;
+}
+
+.item:hover{
+  border: 3px solid #ffffff36;
+  transform: scale(1.05);
 }
 
 .item__post-title{
   text-align: center;
       font-size: 24px;
+       text-transform: capitalize;
 }
 
+.item__post-price{
+  text-align: left;
+      font-size: 16px;
+       text-transform: capitalize;
+}
+.item__post-postedBy{
+  text-align: left;
+      font-size: 16px;
+       text-transform: capitalize;
+}
+.item__post-description{
+  padding: 5px;
+  text-align: left;
+      font-size: 16px;
+       text-transform: capitalize;
+       font-family: cursive;
+}
 
 .item__image{
   width:300px;
@@ -25,8 +49,25 @@
 }
 
 .item-navlink{
-
   color: white;
   margin: 10px;
   font-size: 20px;
+  transition: all .2s ease-in-out;
+  @include smallestPhoneSizes{
+  font-size: 14px;
+  }
+
+  @include mediumSizedPhones{
+font-size: 14px;
+  }
+
+  @include tablets{
+font-size: 14px;
+  }
+
+
+  @include desktopView{
+
+  }
+
 }

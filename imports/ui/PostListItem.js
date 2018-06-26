@@ -45,10 +45,10 @@ export default class PostListItem extends React.Component {
                 <div className="item">
 
                   <h3 className='item__post-title'> {this.props.name} </h3>
-                  <p> Price: ${this.props.price} </p>
-                  <p> Posted by: {this.props.username} </p>
+                  <p className='item__post-price'> Price: ${this.props.price} </p>
+                  <p className='item__post-postedBy'> Posted by: {this.props.username} </p>
                   <img className ='item__image' src={this.props.image}/><br/>
-                    <p>{this.props.description} </p>
+                    <p className='item__post-description'>{this.props.description} </p>
 
                   <button className='savepost__button' onClick={this.savePost.bind(this)}>Save Post </button>
                   <Modal  style={customStyles} isOpen = {this.state.isOpen} contentLabel="Remove post">

@@ -88,10 +88,10 @@ export default class SavedPost extends React.Component {
               <div className = "wrapper wrapper__post">
                       <div className="item item__post-title">
                             <p key={post._id}>{post.description} </p>
-                             <p>Posted by:{post.userId}</p>
-                             <p>Price:{post.price}</p>
+                             <p className='item__post-postedBy'>Posted by:{post.userId}</p>
+                             <p className='item__post-price'>Price:{post.price}</p>
                              <img className ='item__image' src={post.image}/><br/><br/>
-                            <button className='addPost__form__Submit' onClick={this.removeFromCart.bind(this,post._id)}>Remove From Cart </button>
+                            <button className='removePost__form__Submit' onClick={this.removeFromCart.bind(this,post._id)}>Remove From Cart </button>
                       </div>
               </div>
             )

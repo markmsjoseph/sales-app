@@ -183,7 +183,7 @@ export default class ChatComponent extends React.Component {
   render() {
     // console.log("rendering time");
     return (
-      <div>
+      <div >
         <form onSubmit={this.onSubmit.bind(this)}>
               <input className=" chatInputBox " type="text" ref="senderMsg" placeholder="Enter Message"/>
               <button className = "sendChatMessage">Send Message </button>

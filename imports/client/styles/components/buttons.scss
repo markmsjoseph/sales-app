@@ -1,176 +1,201 @@
-.savepost__button{
-  background-color: #231d60;
-border: none;
-color: #ffffff;
-padding: 15px 32px;
-text-align: center;
-text-decoration: none;
-display: inline-block;
-font-size: 16px;
-margin: 10px;
-border: 3px solid #ffffff82;
-}
-.button-login{
-    background-color: #ff0d5f;
-border: none;
-color: white;
-cursor: pointer;
-font-size: 14px;
-line-height: 1.2;
-margin-bottom: 10px;
-padding: 11px;
-border-radius: 46px;
-width: 70%;
-text-transform: uppercase;
+
+.removePost__form__Submit{
+  background-color: $lightPurple;
+      border: none;
+      color: white;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 10px;
+      border-radius: 10px;
+
+      transition: all .2s ease-in-out;
 }
 
+.removePost__form__Submit:hover{
+  color:$purpleFromHeader;
+  background-color: white;
+  border: 3px solid $darkBlue;
+  transform: scale(1.1);
+}
+
+
+
+
+.savepost__button{
+  background-color: #231d60;
+  border: none;
+  color: #ffffff;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 10px;
+  border: 3px solid #ffffff82;
+  transition: all .2s ease-in-out;
+}
 .savepost__button:hover{
   color:white;
+  background-color: $purpleFromHeader;
   border: 3px solid $darkBlue;
+  transform: scale(1.1);
 }
 
 .goToChat__button{
   background-color: #372ab0;
-border: none;
-color: #ffffff;
-padding: 15px 32px;
-text-align: center;
-text-decoration: none;
-display: inline-block;
-font-size: 16px;
-margin: 10px;
-border: 3px solid #ffffff82;
-
+  border: none;
+  color: #ffffff;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 10px;
+  border: 3px solid #ffffff82;
+transition: all .2s ease-in-out;
 }
 .goToChat__button:hover{
-  border: 3px solid $lightBlue;
-  color: $lightBlue;
-    text-decoration: none;
+  border: 3px solid $darkBlue;
+  color:white;
+  text-decoration: none;
+    background-color: #4f2493;
+    transform: scale(1.1);
+}
+
+.button-login{
+  background-color: #ff0d5f;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 14px;
+  line-height: 1.2;
+  margin-bottom: 10px;
+  padding: 11px;
+  border-radius: 46px;
+  width: 70%;
+  text-transform: uppercase;
 }
 
 .item__button{
-background-color: $darkBlue; /* Green */
-border: none;
-color: white;
-padding: 15px 32px;
-text-align: center;
-text-decoration: none;
-display: inline-block;
-font-size: 16px;
-margin: 10px;
+  background-color: $darkBlue; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 10px;
 }
-
 
 .sort_button1{
-      font-size: 14px;
-      border: 1px solid $darkBlue;
-      color: black;
-      padding: 3px;
-      border-radius: 4px;
-      background-color: $darkBlue;
-      color: #ffffff;
-      margin: 5px;
-          border: solid 2px #ffffff6e;
+  font-size: 14px;
+  border: 1px solid $darkBlue;
+  color: black;
+  padding: 3px;
+  border-radius: 4px;
+  background-color: $darkBlue;
+  color: #ffffff;
+  margin: 5px;
+  border: solid 2px #ffffff6e;
 
-    @include smallestPhoneSizes{
+  @include smallestPhoneSizes{
 
-    }
+  }
 
-    @include mediumSizedPhones{
+  @include mediumSizedPhones{
 
-    }
+  }
 
-    @include tablets{
+  @include tablets{
 
-    }
+  }
 
 
-    @include desktopView{
-      position: absolute;
+  @include desktopView{
+    position: absolute;
     right: 0;
     top:65%;
-    }
+  }
 }
 .sort_button{
-      font-size: 14px;
-      border: 1px solid $darkBlue;
-      color: black;
-      padding: 3px;
-      border-radius: 4px;
-      background-color: $darkBlue;
-      color: #ffffff;
-      margin: 5px;
-          border: solid 2px #ffffff6e;
+  font-size: 14px;
+  border: 1px solid $darkBlue;
+  color: black;
+  padding: 3px;
+  border-radius: 4px;
+  background-color: $darkBlue;
+  color: #ffffff;
+  margin: 5px;
+  border: solid 2px #ffffff6e;
 
-    @include smallestPhoneSizes{
+  @include smallestPhoneSizes{
 
-    }
+  }
 
-    @include mediumSizedPhones{
+  @include mediumSizedPhones{
 
-    }
+  }
 
-    @include tablets{
+  @include tablets{
 
-    }
+  }
 
 
-    @include desktopView{
-      position: absolute;
+  @include desktopView{
+    position: absolute;
     right: 0;
     top: 0%;
-    }
+  }
 }
 .sort_button2{
-      font-size: 14px;
-      border: 1px solid $darkBlue;
-      color: black;
-      padding: 3px;
-      border-radius: 4px;
-      background-color: $darkBlue;
-      color: #ffffff;
-      margin: 5px;
-          border: solid 2px #ffffff6e;
+  font-size: 14px;
+  border: 1px solid $darkBlue;
+  color: black;
+  padding: 3px;
+  border-radius: 4px;
+  background-color: $darkBlue;
+  color: #ffffff;
+  margin: 5px;
+  border: solid 2px #ffffff6e;
 
-      @include smallestPhoneSizes{
+  @include smallestPhoneSizes{
 
-      }
+  }
 
-      @include mediumSizedPhones{
+  @include mediumSizedPhones{
 
-      }
+  }
 
-      @include tablets{
+  @include tablets{
 
-      }
+  }
 
 
-      @include desktopView{
-        position: absolute;
-        right: 0;
-        top: 80%;
-      }
+  @include desktopView{
+    position: absolute;
+    right: 0;
+    top: 80%;
+  }
 }
-
-
-
-
-
 
 .logoutButton{
   font-size: 13px;
-border: 1px solid #ffffff;
-color: white;
-padding: 4px;
-border-radius: 4px;
-position: absolute;
-top: 10px;
-right: 10px;
-    background: none;
+  border: 1px solid #ffffff;
+  color: white;
+  padding: 4px;
+  border-radius: 4px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
 
 }
 .logoutButton:hover{
-    border: 1px solid $mediumBlue;
-     background-color: white;
-     color: $mediumBlue;
+  border: 1px solid $mediumBlue;
+  background-color: white;
+  color: $mediumBlue;
 }
