@@ -101,9 +101,22 @@ export default class AllChats extends React.Component {
       <div>
         <div className = "wrapper wrapper-top">
               <PrivateHeader title="Sell Your Stuff" subtitle="All Chats" />
-              <div className="back_to_all_post">
-                    <Link to ="/home">Back to all post</Link>
-              </div>
+              <nav className="navbar navbar-expand-md navbar-dark justify-content-center noMargin">
+                      <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                        <span className="navbar-toggler-icon"></span>
+                      </button>
+
+                      <div className="collapse navbar-collapse" id="collapsibleNavbar">
+                                <ul className="navbar-nav">
+
+                                  <div className="back_to_all_post">
+                                        <Link to ="/home">All Post</Link>
+                                        
+                                  </div>
+
+                                </ul>
+                      </div>
+            </nav>
             </div>
         <h1 className = "chatHeader">Messaging app</h1>
         {this.renderMessages()}

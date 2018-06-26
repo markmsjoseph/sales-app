@@ -5,7 +5,8 @@ import { Meteor } from 'meteor/meteor';
 import PostListItem from './PostListItem';
 import FlipMove from 'react-flip-move';
 import {Session} from 'meteor/session';
-
+import { Link } from 'react-router-dom';
+import PrivateHeader from './PrivateHeader';
 export default class AllPost extends React.Component {
 
 
@@ -20,6 +21,18 @@ export default class AllPost extends React.Component {
     componentDidMount() {
       // console.log("ComponentDidMount fires AllPost");
       this.postTracker =  Tracker.autorun(() => {
+
+        console.log("USERNAME-----------------------:", Meteor.user());
+        if(Meteor.user()){
+          this.setState(()=>{
+            return{
+              username:Meteor.user().username
+            }
+          });
+        }
+        else{
+          console.log("No User");
+        }
           Meteor.subscribe('allPostSubscription');
           //find all links which are approved. then call fetch on cursor to get all link documents back
           const allPost = Post.find({isApproved:'yes'}).fetch();
@@ -27,6 +40,8 @@ export default class AllPost extends React.Component {
       });
 
     }
+
+
 
     // componentWillMount() {
     //   //set the global session variable currentPagePrivacy to the value that was passed in as props from the route component in main.js
@@ -82,39 +97,90 @@ export default class AllPost extends React.Component {
 
 
     }
+    renderAdminPageButton(){
+      // meteor.
+      // var uniqueID = Meteor.users.find({}).fetch();
+      // // var username = Meteor.users.find({_id: uniqueID});
+      // console.log("USERNAMEEE", uniqueID);
+      if(Meteor.userId() == "bpe7Kafu9xq3DFR2g"){
+
+          return(
+            <div className="  wrapper__post ">
+              <Link to ="/adminPage">Admin Page</Link>
+            </div>
+          );
+
+      }
+    }
 
 
     render() {
       return (
         <div>
-          <div className="container-fluid noPadding">
-                      <div className = "wrapper wrapper-top-search wrapper_search-and-filter">
-                                      <div className="row text-center  ">
-                                              <div className="col-xs-12 col-sm-12 col-md-4 centerColumn ">
-                                                  <input className = ' search-form form-control form-control-lg ' type="text" placeholder="SEARCH" onChange={this.handleSearch.bind(this)}/><br/>
-                                              </div>
-                                      </div>
 
-                                      <div className="row ">
-                                          <div className="col-xs-12 col-sm-12 col-md-12 rightAlign">
-                                              <button className=" sort_button " onClick={this.onSortByDesc.bind(this)}>Sort by Price Asc(Largest to Smallest)</button>
-                                          </div>
-                                          <div class="col-xs-12 col-sm-12 col-md-12 rightAlign">
-                                              <button className=" sort_button " onClick={this.onSortByAsec.bind(this)}>Sort by Price Desc(Smallest to Largest)</button>
-                                          </div>
-                                    </div>
-                        </div>
+          <div className = "wrapper wrapper-top">
+                      <PrivateHeader  title="Sell Your Stuff" shortDes="users should be able to see all post on this page. Post will contain a image, price and short description. Each post will a link to more details about it. EVERYONE CAN SEE EVERYTHING ON THIS PAGE " />
+                      <p className = "logged-in-as">Logged in as:{this.state.username} </p>
 
-          </div>
+                    <div class="row justify-content-center">
+                      <nav className="navbar navbar-expand-md navbar-dark justify-content-center noMargin">
+                              <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                                <span className="navbar-toggler-icon"></span>
+                              </button>
+
+                              <div className="collapse navbar-collapse" id="collapsibleNavbar">
+                                        <ul className="navbar-nav ">
+
+                                          <Link className = "item-navlink" to ="/addPost">Add New Item To Sell</Link>
+                                          <Link className = "item-navlink" to ="/savedPost">Saved Post</Link>
+                                          <Link className = "item-navlink" to ="/allChats">All Chats</Link>
+                                          <Link className = "item-navlink" to ="/managePost">Manage Your Post</Link>
+                                          {this.renderAdminPageButton()}
+
+                                        </ul>
+                              </div>
+                      </nav>
+                    </div>
+
+                      {/* <div className="wrapper-top-main-links">
+
+                        </div> */}
+
+                        <div class="row justify-content-center">
+
+                                <button className=" sort_button1 " onClick={this.onSortByDesc.bind(this)}>Sort by Price Asc(Largest to Smallest)</button>
+                            </div>
+                          <div class="row justify-content-center">
+                                <button className=" sort_button2 " onClick={this.onSortByAsec.bind(this)}>Sort by Price Desc(Smallest to Largest)</button>
+
+                      </div>
+
+                                  <div className="container-fluid noPadding">
+
+
+                                                              <div class="row justify-content-center">
+                                                                          <input id="myInput" className = ' search-form form-control form-control-lg ' type="text" placeholder="SEARCH" onChange={this.handleSearch.bind(this)}/><br/>
+                                                                      </div>
+
+
+
+
+
+                                  </div>
+
+              </div>
 
 
 
 
 
 
-            <div className = "wrapper">
+
+
+
+            <div className = "wrapperAll">
               <div className="container-fluid">
-  <div className="row">
+                  <div className="row">
                   <FlipMove>
 
                     {this.renderPostListItems()}

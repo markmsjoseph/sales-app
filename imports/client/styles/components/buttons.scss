@@ -63,6 +63,37 @@ font-size: 16px;
 margin: 10px;
 }
 
+
+.sort_button1{
+      font-size: 14px;
+      border: 1px solid $darkBlue;
+      color: black;
+      padding: 3px;
+      border-radius: 4px;
+      background-color: $darkBlue;
+      color: #ffffff;
+      margin: 5px;
+          border: solid 2px #ffffff6e;
+
+    @include smallestPhoneSizes{
+
+    }
+
+    @include mediumSizedPhones{
+
+    }
+
+    @include tablets{
+
+    }
+
+
+    @include desktopView{
+      position: absolute;
+    right: 0;
+    top:65%;
+    }
+}
 .sort_button{
       font-size: 14px;
       border: 1px solid $darkBlue;
@@ -138,6 +169,7 @@ border-radius: 4px;
 position: absolute;
 top: 10px;
 right: 10px;
+    background: none;
 
 }
 .logoutButton:hover{

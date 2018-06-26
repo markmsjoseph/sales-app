@@ -45,10 +45,24 @@ export default class MessagingRoom extends React.Component {
 
           <div className = "wrapper wrapper-top">
                 <PrivateHeader title="Sell Your Stuff" subtitle="Chat Room" />
-                <div className="back_to_all_post">
-                      <Link to ="/home">All Post</Link>
-                        <Link to ="/allChats">All Chats</Link>
-                </div>
+
+
+                <nav className="navbar navbar-expand-md navbar-dark justify-content-center noMargin">
+                        <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                          <span className="navbar-toggler-icon"></span>
+                        </button>
+
+                        <div className="collapse navbar-collapse" id="collapsibleNavbar">
+                                  <ul className="navbar-nav">
+
+                                    <div className="back_to_all_post">
+                                          <Link to ="/home">All Post</Link>
+                                            <Link to ="/allChats">All Chats</Link>
+                                    </div>
+
+                                  </ul>
+                        </div>
+              </nav>
               </div>
 
 

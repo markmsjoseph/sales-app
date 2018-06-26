@@ -2,11 +2,29 @@
 .back_to_all_post{
     a{
      display: inline-block;
-     padding: 20px;
+
      color: white;
      font-size: 24px;
      font-family: sans-serif;
      text-decoration: none;
+     @include smallestPhoneSizes{
+          font-size: 14px;
+     }
+
+     @include mediumSizedPhones{
+          font-size: 14px;
+     }
+
+     @include tablets{
+  font-size: 14px;
+     }
+
+
+     @include desktopView{
+         background-size: 100% 100%;
+     }
+
+
    }
 
    a:hover{

@@ -63,7 +63,7 @@ padding-bottom: 28px;
 }
 
 #myInput::-webkit-input-placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-    color: #ffffff82;
+    color: #231d60;
 }
 
 .glyphicon{
@@ -116,6 +116,7 @@ padding-bottom: 28px;
   width: 65%;
   -webkit-transition:width 0.3s ease-in-out;
       margin-bottom: 40px;
+          margin-top: 38px;
   @include smallestPhoneSizes{
 
   }
